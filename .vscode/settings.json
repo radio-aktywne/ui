@@ -1,0 +1,5 @@
+{
+  "[javascript][javascriptreact][typescript][typescriptreact][mdx]": {
+    "editor.tabSize": 2
+  }
+}

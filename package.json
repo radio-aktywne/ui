@@ -1,0 +1,57 @@
+{
+  "name": "ui",
+  "private": true,
+  "files": [
+    "build"
+  ],
+  "exports": {
+    ".": {
+      "import": "./build/index.mjs",
+      "types": "./build/index.d.ts"
+    },
+    "./styles.css": "./build/index.css",
+    "./assets/*": "./build/assets/*"
+  },
+  "scripts": {
+    "prepare": "rslib build",
+    "build": "rslib build",
+    "clean": "rm --recursive --force build/",
+    "storybook": "storybook",
+    "update": "ncu --peer --upgrade && npm i --no-audit --no-fund"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^7.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@rsbuild/core": "^1.2.16",
+    "@rsbuild/plugin-react": "^1.1.1",
+    "@rslib/core": "^0.5.3",
+    "@storybook/addon-essentials": "^8.6.4",
+    "@storybook/blocks": "^8.6.4",
+    "@storybook/react": "^8.6.4",
+    "@storybook/test": "^8.6.4",
+    "@types/css-modules": "^1.0.5",
+    "@types/node": "^20.17.19",
+    "eslint-plugin-perfectionist": "^4.9.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-storybook": "^0.11.4",
+    "globals": "^16.0.0",
+    "npm-check-updates": "^17.1.14",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "storybook": "^8.6.4",
+    "storybook-addon-rslib": "^1.0.0",
+    "storybook-dark-mode": "^4.0.2",
+    "storybook-react-rsbuild": "^1.0.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
+  }
+}
