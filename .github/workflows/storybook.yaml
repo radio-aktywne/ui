@@ -70,6 +70,8 @@ jobs:
           --import
           < ${{ env.NIX_CACHE_DIR }}/archive.nar
       - name: Build storybook
+        env:
+          STORYBOOK_BASE_PATH: /ui/
         run: >
           nix
           develop

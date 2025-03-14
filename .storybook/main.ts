@@ -1,3 +1,4 @@
+import { RsbuildConfig } from "@rsbuild/core";
 import { StorybookConfig } from "storybook-react-rsbuild";
 
 export default {
@@ -10,6 +11,12 @@ export default {
     disableTelemetry: true,
   },
   framework: "storybook-react-rsbuild",
+  rsbuildFinal: (config): RsbuildConfig => ({
+    ...config,
+    dev: { ...config.dev, assetPrefix: process.env.STORYBOOK_BASE_PATH },
+    output: { ...config.output, assetPrefix: process.env.STORYBOOK_BASE_PATH },
+    server: { ...config.server, base: process.env.STORYBOOK_BASE_PATH },
+  }),
   staticDirs: ["../stories/assets"],
   stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(ts|tsx)"],
   typescript: {
