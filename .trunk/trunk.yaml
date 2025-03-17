@@ -15,6 +15,11 @@ runtimes:
     # Needed for yamllint
     - python@3.12.2
 lint:
+  files:
+    # Define pure markdown files (without mdx)
+    - name: md
+      extensions:
+        - md
   ignore:
     - linters: [ALL]
       paths:
@@ -61,6 +66,10 @@ lint:
       commands:
         - name: lint
           run_from: ${root_or_parent_with_direct_config}
+    # Override default markdownlint definition
+    - name: markdownlint
+      # Lint only pure markdown files
+      files: [md]
   enabled:
     # GitHub Actions linting
     - actionlint@1.7.7
