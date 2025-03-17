@@ -1,5 +1,5 @@
 import "./styles.css";
 
-export { Button } from "./components";
-export type { ButtonInput } from "./components";
+export { List, ListItem } from "./components";
+export type { ListInput, ListItemInput } from "./components";
 export { theme } from "./theme";
