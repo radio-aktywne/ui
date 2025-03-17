@@ -34,6 +34,7 @@ export default {
       return (
         <MantineProvider
           defaultColorScheme={dark ? "dark" : "light"}
+          forceColorScheme="dark" // Only dark mode is supported at the moment
           theme={theme}
         >
           <Box h="100%" id="preview" p="xl" w="100%">
