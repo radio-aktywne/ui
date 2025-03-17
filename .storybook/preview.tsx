@@ -1,4 +1,11 @@
-import { MantineProvider, useMantineColorScheme } from "@mantine/core";
+import {
+  Box,
+  Center,
+  Container,
+  MantineProvider,
+  Paper,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { Preview } from "@storybook/react";
 import { useEffect } from "react";
 import { useDarkMode } from "storybook-dark-mode";
@@ -6,6 +13,8 @@ import { useDarkMode } from "storybook-dark-mode";
 import { theme } from "../src";
 
 import "@mantine/core/styles.layer.css";
+
+import "../src/styles.css";
 
 export default {
   decorators: [
@@ -27,7 +36,15 @@ export default {
           defaultColorScheme={dark ? "dark" : "light"}
           theme={theme}
         >
-          <Story />
+          <Box h="100%" id="preview" p="xl" w="100%">
+            <Container h="100%" p="xl" w="100%">
+              <Paper h="100%" p="xl" w="100%">
+                <Center h="100%" p="xl" w="100%">
+                  <Story />
+                </Center>
+              </Paper>
+            </Container>
+          </Box>
         </MantineProvider>
       );
     },
@@ -37,6 +54,6 @@ export default {
       disableSaveFromUI: true,
       expanded: true,
     },
-    layout: "centered",
+    layout: "fullscreen",
   },
 } satisfies Preview;
