@@ -1,9 +1,0 @@
-@layer radio-aktywne {
-  .button {
-    margin: var(--mantine-spacing-xl);
-
-    @mixin light {
-      color: red;
-    }
-  }
-}

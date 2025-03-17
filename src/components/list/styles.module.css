@@ -1,0 +1,17 @@
+@layer radio-aktywne {
+  .list {
+    background-color: var(--mantine-color-default);
+
+    & > *:nth-child(even) {
+      background-color: var(--mantine-color-default);
+    }
+
+    & > *:nth-child(odd) {
+      background-color: var(--mantine-color-default-alternative);
+    }
+  }
+
+  .grow {
+    flex: 1;
+  }
+}

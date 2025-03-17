@@ -1,0 +1,11 @@
+@layer radio-aktywne {
+  .list-item {
+    & > *:first-child {
+      flex: 1;
+    }
+
+    & > *:nth-child(2) {
+      margin-left: var(--mantine-spacing-xl);
+    }
+  }
+}
