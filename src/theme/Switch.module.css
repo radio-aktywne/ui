@@ -1,0 +1,8 @@
+@layer radio-aktywne {
+  .track {
+    input:not(:checked):not(:disabled) + & {
+      background-color: var(--mantine-color-default);
+    }
+    border: none;
+  }
+}

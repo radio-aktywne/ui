@@ -1,0 +1,15 @@
+@layer radio-aktywne {
+  .control {
+    &:where(:not([data-active])) {
+      background-color: var(--mantine-color-default);
+
+      @mixin hover {
+        &:where(:not(:disabled, [data-disabled])) {
+          background-color: var(--mantine-color-default-alternative);
+        }
+      }
+    }
+
+    border: none;
+  }
+}

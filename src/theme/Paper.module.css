@@ -1,0 +1,5 @@
+@layer radio-aktywne {
+  .root {
+    background-color: var(--mantine-color-midground);
+  }
+}
