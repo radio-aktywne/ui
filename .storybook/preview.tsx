@@ -16,6 +16,12 @@ import "@mantine/core/styles.layer.css";
 
 import "../src/styles.css";
 
+type Parameters = {
+  preview?: {
+    layout?: boolean;
+  };
+};
+
 export default {
   decorators: [
     (Story) => {
@@ -28,7 +34,10 @@ export default {
 
       return <Story />;
     },
-    (Story) => {
+    (Story, context) => {
+      const parameters = context.parameters as Parameters;
+      const layout = parameters.preview?.layout ?? true;
+
       const dark = useDarkMode();
 
       return (
@@ -37,14 +46,18 @@ export default {
           forceColorScheme="dark" // Only dark mode is supported at the moment
           theme={theme}
         >
-          <Box h="100%" id="preview" p="xl" w="100%">
-            <Container h="100%" p="xl" w="100%">
-              <Paper h="100%" p="xl" w="100%">
-                <Center h="100%" p="xl" w="100%">
-                  <Story />
-                </Center>
-              </Paper>
-            </Container>
+          <Box h="100%" id="preview" w="100%">
+            {layout ? (
+              <Container h="100%" p="xl" w="100%">
+                <Paper h="100%" p="xl" w="100%">
+                  <Center h="100%" w="100%">
+                    <Story />
+                  </Center>
+                </Paper>
+              </Container>
+            ) : (
+              <Story />
+            )}
           </Box>
         </MantineProvider>
       );
