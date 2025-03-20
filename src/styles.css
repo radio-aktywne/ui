@@ -12,6 +12,7 @@
     --mantine-color-shadow: var(--mantine-color-ra-blue-filled);
     --mantine-color-text: var(--mantine-color-background);
     --mantine-color-white: var(--mantine-color-dark-0);
+    --mantine-primary-color-text: var(--mantine-primary-color-filled);
 
     @mixin light-root {
       --mantine-color-background: var(--mantine-color-black);
