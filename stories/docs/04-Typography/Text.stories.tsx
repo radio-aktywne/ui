@@ -1,6 +1,7 @@
-import { Text } from "@mantine/core";
+import { DEFAULT_THEME, Text } from "@mantine/core";
 import { Meta, StoryObj } from "@storybook/react";
 
+import { theme } from "../../../src";
 import { Typeset } from "./Typeset";
 
 const meta = {
@@ -28,13 +29,10 @@ export const Sizes = {
       component={Text<"p">}
       property="size"
       rest={props}
-      values={[
-        { label: "xs", value: "xs" },
-        { label: "sm", value: "sm" },
-        { label: "md", value: "md" },
-        { label: "lg", value: "lg" },
-        { label: "xl", value: "xl" },
-      ]}
+      values={Object.keys({
+        ...DEFAULT_THEME.fontSizes,
+        ...theme.fontSizes,
+      }).map((size) => ({ label: size, value: size }))}
     />
   ),
 } satisfies Story;
@@ -46,10 +44,15 @@ export const Weights = {
       property="fw"
       rest={props}
       values={[
-        { label: "lighter", value: "lighter" },
-        { label: "normal", value: "normal" },
-        { label: "bold", value: "bold" },
-        { label: "bolder", value: "bolder" },
+        { label: "100", value: 100 },
+        { label: "200", value: 200 },
+        { label: "300", value: 300 },
+        { label: "400", value: 400 },
+        { label: "500", value: 500 },
+        { label: "600", value: 600 },
+        { label: "700", value: 700 },
+        { label: "800", value: 800 },
+        { label: "900", value: 900 },
       ]}
     />
   ),
