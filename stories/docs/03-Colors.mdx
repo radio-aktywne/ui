@@ -1,0 +1,17 @@
+import { ColorItem, ColorPalette, Meta } from "@storybook/blocks";
+
+import { theme } from "../../src";
+
+<Meta title="Docs/Colors" />
+
+# Colors
+
+Below you can see the full color palette that we use in our theme.
+
+---
+
+<ColorPalette>
+  {Object.entries(theme.colors).map(([name, colors]) => (
+    <ColorItem colors={colors} key={name} title={name} />
+  ))}
+</ColorPalette>
