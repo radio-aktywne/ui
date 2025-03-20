@@ -11,6 +11,7 @@ import {
   Slider,
   Switch,
   ThemeIcon,
+  Title,
 } from "@mantine/core";
 
 import checkboxClasses from "./Checkbox.module.css";
@@ -142,6 +143,11 @@ export const theme = createTheme({
     ThemeIcon: ThemeIcon.extend({
       defaultProps: {
         variant: "default",
+      },
+    }),
+    Title: Title.extend({
+      defaultProps: {
+        c: "var(--mantine-primary-color-text)",
       },
     }),
   },
