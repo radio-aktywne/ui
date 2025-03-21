@@ -24,8 +24,8 @@ export default {
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
       propFilter: () => true,
+      shouldExtractValuesFromUnion: true,
       shouldRemoveUndefinedFromOptional: true,
-      skipChildrenPropWithoutDoc: false,
       tsconfigPath: "tsconfig.json",
     },
   },
