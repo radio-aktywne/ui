@@ -19,9 +19,6 @@ const meta = {
     )),
   },
   argTypes: {
-    children: {
-      control: false,
-    },
     grow: {
       control: "boolean",
     },
@@ -29,7 +26,7 @@ const meta = {
   component: List,
   parameters: {
     controls: {
-      include: ["children", "grow"],
+      include: ["grow"],
     },
   },
 } satisfies Meta<typeof List>;

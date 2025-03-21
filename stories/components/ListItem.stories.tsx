@@ -18,15 +18,10 @@ const meta = {
       </>
     ),
   },
-  argTypes: {
-    children: {
-      control: false,
-    },
-  },
   component: ListItem,
   parameters: {
     controls: {
-      include: ["children"],
+      include: [],
     },
   },
   render: (input) => (
