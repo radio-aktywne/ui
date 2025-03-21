@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@radio-aktywne/ui",
   "private": true,
   "files": [
     "build"
