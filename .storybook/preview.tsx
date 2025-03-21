@@ -3,14 +3,13 @@ import {
   Center,
   Container,
   MantineProvider,
-  Paper,
   useMantineColorScheme,
 } from "@mantine/core";
 import { Preview } from "@storybook/react";
 import { useEffect } from "react";
 import { useDarkMode } from "storybook-dark-mode";
 
-import { theme } from "../src";
+import { Paper, theme } from "../src";
 
 import "@mantine/core/styles.layer.css";
 
@@ -49,7 +48,7 @@ export default {
           <Box h="100%" id="preview" w="100%">
             {layout ? (
               <Container h="100%" p="xl" w="100%">
-                <Paper h="100%" p="xl" w="100%">
+                <Paper h="100%" w="100%">
                   <Center h="100%" w="100%">
                     <Story />
                   </Center>

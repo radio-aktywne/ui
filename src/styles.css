@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+@layer mantine;
+
 @layer radio-aktywne {
   :root {
     --mantine-color-anchor: var(--mantine-color-ra-blue-text);
@@ -11,7 +13,7 @@
     );
     --mantine-color-default-hover: var(--mantine-color-default-alternative);
     --mantine-color-error: var(--mantine-color-ra-red-text);
-    --mantine-color-shadow: var(--mantine-color-ra-blue-filled);
+    --mantine-color-shadow: var(--mantine-color-ra-green-filled);
     --mantine-color-text: var(--mantine-color-background);
     --mantine-color-white: var(--mantine-color-dark-0);
     --mantine-primary-color-text: var(--mantine-primary-color-filled);
