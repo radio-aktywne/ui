@@ -111,6 +111,7 @@ export const theme = createTheme({
         root: paperClasses.root,
       },
       defaultProps: {
+        p: "xl",
         shadow: "md",
       },
     }),
