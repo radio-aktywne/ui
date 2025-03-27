@@ -4,8 +4,8 @@ import { PaperInput } from "./types";
 
 /** Basic midground component for displaying content */
 export function Paper({
-  shadowColor,
-  shadowSize,
+  shadowColor = "primary",
+  shadowSize = "md",
   style,
   ...input
 }: PaperInput) {
@@ -21,6 +21,8 @@ export function Paper({
               return "var(--mantine-color-ra-blue-filled)";
             case "green":
               return "var(--mantine-color-ra-green-filled)";
+            case "primary":
+              return "var(--mantine-primary-color-filled)";
             case "red":
               return "var(--mantine-color-ra-red-filled)";
             case "yellow":

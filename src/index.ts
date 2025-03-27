@@ -1,5 +1,21 @@
 import "./styles.css";
 
-export { List, ListItem, Paper } from "./components";
-export type { ListInput, ListItemInput, PaperInput } from "./components";
+export {
+  List,
+  ListItem,
+  MasterDetailLayout,
+  MasterDetailLayoutDetailPanel,
+  MasterDetailLayoutMasterPanel,
+  PageLayout,
+  Paper,
+} from "./components";
+export type {
+  ListInput,
+  ListItemInput,
+  MasterDetailLayoutDetailPanelInput,
+  MasterDetailLayoutInput,
+  MasterDetailLayoutMasterPanelInput,
+  PageLayoutInput,
+  PaperInput,
+} from "./components";
 export { theme } from "./theme";

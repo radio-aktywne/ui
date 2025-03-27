@@ -1,4 +1,4 @@
-import { Container } from "@mantine/core";
+import { Box, Container } from "@mantine/core";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { Paper } from "../../src";
@@ -27,9 +27,11 @@ const meta = {
     },
   },
   render: (args) => (
-    <Container h="100%" p="xl" w="100%">
-      <Paper {...args} />
-    </Container>
+    <Box h="100%" px="xl" py="xl" w="100%">
+      <Container h="100%" w="100%">
+        <Paper {...args} />
+      </Container>
+    </Box>
   ),
 } satisfies Meta<typeof Paper>;
 export default meta;

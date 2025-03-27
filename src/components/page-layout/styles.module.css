@@ -1,0 +1,11 @@
+@layer radio-aktywne {
+  .page-layout {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    & > * {
+      flex: 1;
+    }
+  }
+}
