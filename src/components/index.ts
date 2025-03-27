@@ -2,6 +2,8 @@ export { List } from "./list";
 export type { ListInput } from "./list";
 export { ListItem } from "./list-item";
 export type { ListItemInput } from "./list-item";
+export { MainLayout } from "./main-layout";
+export type { MainLayoutInput } from "./main-layout";
 export { MasterDetailLayout } from "./master-detail-layout";
 export type { MasterDetailLayoutInput } from "./master-detail-layout";
 export { MasterDetailLayoutDetailPanel } from "./master-detail-layout-detail-panel";

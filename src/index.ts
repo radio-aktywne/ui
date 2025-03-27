@@ -5,6 +5,7 @@ import "./styles.css";
 export {
   List,
   ListItem,
+  MainLayout,
   MasterDetailLayout,
   MasterDetailLayoutDetailPanel,
   MasterDetailLayoutMasterPanel,
@@ -14,6 +15,7 @@ export {
 export type {
   ListInput,
   ListItemInput,
+  MainLayoutInput,
   MasterDetailLayoutDetailPanelInput,
   MasterDetailLayoutInput,
   MasterDetailLayoutMasterPanelInput,

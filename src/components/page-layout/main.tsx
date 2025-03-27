@@ -1,4 +1,7 @@
-import { Center, Container as MantineContainer } from "@mantine/core";
+import {
+  Center as MantineCenter,
+  Container as MantineContainer,
+} from "@mantine/core";
 import { clsx } from "clsx";
 
 import classes from "./styles.module.css";
@@ -14,7 +17,7 @@ export function PageLayout({
   ...input
 }: PageLayoutInput) {
   return (
-    <Center
+    <MantineCenter
       h="100%"
       p={(() => {
         switch (p) {
@@ -41,6 +44,6 @@ export function PageLayout({
         w={w}
         {...input}
       />
-    </Center>
+    </MantineCenter>
   );
 }
