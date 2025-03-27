@@ -1,3 +1,4 @@
+import { Text } from "@mantine/core";
 import { Meta, StoryObj } from "@storybook/react";
 
 import {
@@ -8,6 +9,9 @@ import {
 } from "../../src";
 
 const meta = {
+  args: {
+    children: <Text>Master</Text>,
+  },
   argTypes: {
     shadowColor: {
       control: "radio",
@@ -26,7 +30,9 @@ const meta = {
     <PageLayout>
       <MasterDetailLayout>
         <MasterDetailLayoutMasterPanel {...args} />
-        <MasterDetailLayoutDetailPanel />
+        <MasterDetailLayoutDetailPanel>
+          <Text>Detail</Text>
+        </MasterDetailLayoutDetailPanel>
       </MasterDetailLayout>
     </PageLayout>
   ),

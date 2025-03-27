@@ -1,3 +1,4 @@
+import { Text } from "@mantine/core";
 import { Meta, StoryObj } from "@storybook/react";
 
 import {
@@ -38,7 +39,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Singular = {
   args: {
-    children: <MasterDetailLayoutMasterPanel />,
+    children: (
+      <MasterDetailLayoutMasterPanel>
+        <Text>Master</Text>
+      </MasterDetailLayoutMasterPanel>
+    ),
   },
 } satisfies Story;
 
@@ -46,8 +51,12 @@ export const Dual = {
   args: {
     children: (
       <>
-        <MasterDetailLayoutMasterPanel />
-        <MasterDetailLayoutDetailPanel />
+        <MasterDetailLayoutMasterPanel>
+          <Text>Master</Text>
+        </MasterDetailLayoutMasterPanel>
+        <MasterDetailLayoutDetailPanel>
+          <Text>Detail</Text>
+        </MasterDetailLayoutDetailPanel>
       </>
     ),
   },

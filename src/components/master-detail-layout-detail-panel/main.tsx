@@ -1,17 +1,18 @@
-import { Grid as MantineGrid } from "@mantine/core";
+import { GridCol as MantineGridCol } from "@mantine/core";
 
 import { Paper } from "../paper";
 import { MasterDetailLayoutDetailPanelInput } from "./types";
 
 /** Detail panel for master-detail layout */
 export function MasterDetailLayoutDetailPanel({
+  h = "100%",
   shadowColor = "blue",
   span = 8,
   ...input
 }: MasterDetailLayoutDetailPanelInput) {
   return (
-    <MantineGrid.Col span={span}>
-      <Paper h="100%" shadowColor={shadowColor} {...input} />
-    </MantineGrid.Col>
+    <MantineGridCol span={span}>
+      <Paper h={h} shadowColor={shadowColor} {...input} />
+    </MantineGridCol>
   );
 }
