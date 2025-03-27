@@ -1,6 +1,5 @@
 import {
   Box,
-  Center,
   Container,
   MantineProvider,
   useMantineColorScheme,
@@ -50,9 +49,7 @@ export default {
               <Box h="100%" px="xl" py="xl" w="100%">
                 <Container h="100%" w="100%">
                   <Paper h="100%" w="100%">
-                    <Center h="100%" w="100%">
-                      <Story />
-                    </Center>
+                    <Story />
                   </Paper>
                 </Container>
               </Box>

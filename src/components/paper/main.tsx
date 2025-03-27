@@ -1,9 +1,13 @@
 import { Paper as MantinePaper, useMantineTheme } from "@mantine/core";
+import { clsx } from "clsx";
 
+import classes from "./styles.module.css";
 import { PaperInput } from "./types";
 
 /** Basic midground component for displaying content */
 export function Paper({
+  center = true,
+  className,
   shadowColor = "primary",
   shadowSize = "md",
   style,
@@ -13,6 +17,7 @@ export function Paper({
 
   return (
     <MantinePaper
+      className={clsx(center && classes.center, className)}
       shadow={shadowSize}
       style={{
         "--mantine-color-shadow": (() => {
