@@ -1,0 +1,19 @@
+@layer radio-aktywne {
+  .container {
+    height: 100%;
+  }
+
+  .root {
+    height: 100%;
+  }
+
+  .inner {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+  }
+
+  .col {
+    height: 100%;
+  }
+}

@@ -4,7 +4,7 @@ import {
   MantineShadowsValues,
 } from "@mantine/core";
 
-export type PaperShadowColors = "blue" | "green" | "red" | "yellow";
+export type PaperShadowColors = "blue" | "green" | "primary" | "red" | "yellow";
 
 export type PaperInput = {
   /** Color of the shadow */

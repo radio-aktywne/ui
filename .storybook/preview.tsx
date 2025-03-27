@@ -47,13 +47,15 @@ export default {
         >
           <Box h="100%" id="preview" w="100%">
             {layout ? (
-              <Container h="100%" p="xl" w="100%">
-                <Paper h="100%" w="100%">
-                  <Center h="100%" w="100%">
-                    <Story />
-                  </Center>
-                </Paper>
-              </Container>
+              <Box h="100%" px="xl" py="xl" w="100%">
+                <Container h="100%" w="100%">
+                  <Paper h="100%" w="100%">
+                    <Center h="100%" w="100%">
+                      <Story />
+                    </Center>
+                  </Paper>
+                </Container>
+              </Box>
             ) : (
               <Story />
             )}

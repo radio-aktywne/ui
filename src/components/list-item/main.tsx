@@ -9,6 +9,7 @@ export function ListItem({
   className,
   gap = "xs",
   p = "sm",
+  wrap = "nowrap",
   ...input
 }: ListItemInput) {
   return (
@@ -16,6 +17,7 @@ export function ListItem({
       className={clsx(classes["list-item"], className)}
       gap={gap}
       p={p}
+      wrap={wrap}
       {...input}
     />
   );

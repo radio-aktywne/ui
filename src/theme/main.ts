@@ -2,6 +2,7 @@ import {
   ActionIcon,
   Checkbox,
   CheckIcon,
+  Container,
   createTheme,
   defaultVariantColorsResolver,
   Input,
@@ -96,6 +97,12 @@ export const theme = createTheme({
         input: checkboxClasses.input,
       },
     }),
+    Container: Container.extend({
+      defaultProps: {
+        px: 0,
+        py: 0,
+      },
+    }),
     Input: Input.extend({
       defaultProps: {
         variant: "filled",
@@ -112,7 +119,6 @@ export const theme = createTheme({
       },
       defaultProps: {
         p: "xl",
-        shadow: "md",
       },
     }),
     Radio: Radio.extend({
