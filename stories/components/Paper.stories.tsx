@@ -1,14 +1,18 @@
-import { Box, Container } from "@mantine/core";
+import { Box, Container, Text } from "@mantine/core";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { Paper } from "../../src";
 
 const meta = {
   args: {
+    children: <Text>Content</Text>,
     h: "100%",
     w: "100%",
   },
   argTypes: {
+    center: {
+      control: "boolean",
+    },
     shadowColor: {
       control: "radio",
     },
@@ -20,7 +24,7 @@ const meta = {
   component: Paper,
   parameters: {
     controls: {
-      include: ["shadowColor", "shadowSize"],
+      include: ["center", "shadowColor", "shadowSize"],
     },
     preview: {
       layout: false,
