@@ -3,6 +3,12 @@
 @layer mantine;
 
 @layer radio-aktywne {
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
   :root {
     --mantine-color-anchor: var(--mantine-color-ra-blue-text);
     --mantine-color-black: var(--mantine-color-dark-8);
