@@ -1,3 +1,5 @@
+export { FloatingMenu } from "./floating-menu";
+export type { FloatingMenuInput } from "./floating-menu";
 export { List } from "./list";
 export type { ListInput } from "./list";
 export { ListItem } from "./list-item";
@@ -14,3 +16,5 @@ export { PageLayout } from "./page-layout";
 export type { PageLayoutInput } from "./page-layout";
 export { Paper } from "./paper";
 export type { PaperInput } from "./paper";
+export { UserMenu } from "./user-menu";
+export type { UserMenuInput } from "./user-menu";

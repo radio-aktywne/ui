@@ -3,6 +3,7 @@
 import "./styles.css";
 
 export {
+  FloatingMenu,
   List,
   ListItem,
   MainLayout,
@@ -11,8 +12,10 @@ export {
   MasterDetailLayoutMasterPanel,
   PageLayout,
   Paper,
+  UserMenu,
 } from "./components";
 export type {
+  FloatingMenuInput,
   ListInput,
   ListItemInput,
   MainLayoutInput,
@@ -21,5 +24,6 @@ export type {
   MasterDetailLayoutMasterPanelInput,
   PageLayoutInput,
   PaperInput,
+  UserMenuInput,
 } from "./components";
 export { theme } from "./theme";
