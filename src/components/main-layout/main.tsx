@@ -7,7 +7,7 @@ import { MainLayoutInput } from "./types";
 export function MainLayout({
   fluid,
   h = "100%",
-  size = "md",
+  size = "sm",
   ...input
 }: MainLayoutInput) {
   return (
