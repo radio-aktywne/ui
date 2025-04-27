@@ -56,18 +56,9 @@ export function UserMenu({
       <FloatingMenu.Dropdown bg="var(--mantine-color-midground)">
         <List>
           <ListItem p="0.5rem">
-            {user.email.includes("@") ? (
-              <Text lh="1rem" size="sm">
-                <strong>
-                  {user.email.substring(0, user.email.lastIndexOf("@"))}
-                </strong>
-                <br />@{user.email.substring(user.email.lastIndexOf("@") + 1)}
-              </Text>
-            ) : (
-              <Text fw="bold" lh="1rem" size="sm">
-                {user.email}
-              </Text>
-            )}
+            <Text fw="bold" size="sm">
+              {user.name}
+            </Text>
           </ListItem>
           <Box component="a" href={items.logout.url} td="none">
             <ListItem p="0.5rem">

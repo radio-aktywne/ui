@@ -11,7 +11,7 @@ const meta = {
       },
     },
     user: {
-      email: "user@example.com",
+      name: "John Doe",
     },
   },
   argTypes: {
