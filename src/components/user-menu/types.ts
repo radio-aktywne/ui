@@ -3,8 +3,8 @@ import { MantineShadow, MantineSize } from "@mantine/core";
 import { FloatingMenuInput } from "../floating-menu";
 
 type User = {
-  /** Email address of the user */
-  email: string;
+  /** Display name of the user */
+  name: string;
 };
 
 type LogoutItem = {
