@@ -13,19 +13,42 @@ const meta = {
     children: <Text>Master</Text>,
   },
   argTypes: {
+    fluid: {
+      control: "boolean",
+    },
     shadowColor: {
       control: "radio",
+    },
+    size: {
+      control: "radio",
+      options: ["xs", "sm", "md", "lg", "xl"],
     },
   },
   component: MasterDetailLayoutMasterPanel,
   parameters: {
     controls: {
-      include: ["shadowColor"],
+      include: ["fluid", "size", "shadowColor"],
     },
     preview: {
       layout: false,
     },
   },
+} satisfies Meta<typeof MasterDetailLayoutMasterPanel>;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Singular: Story = {
+  render: (args) => (
+    <PageLayout>
+      <MasterDetailLayout>
+        <MasterDetailLayoutMasterPanel {...args} />
+      </MasterDetailLayout>
+    </PageLayout>
+  ),
+} satisfies Story;
+
+export const Dual: Story = {
   render: (args) => (
     <PageLayout>
       <MasterDetailLayout>
@@ -36,9 +59,4 @@ const meta = {
       </MasterDetailLayout>
     </PageLayout>
   ),
-} satisfies Meta<typeof MasterDetailLayoutMasterPanel>;
-export default meta;
-
-type Story = StoryObj<typeof meta>;
-
-export const Default = {} satisfies Story;
+} satisfies Story;
