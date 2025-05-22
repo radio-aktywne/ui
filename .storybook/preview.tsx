@@ -11,6 +11,7 @@ import { useDarkMode } from "storybook-dark-mode";
 import { Paper, theme } from "../src";
 
 import "@mantine/core/styles.layer.css";
+import "@mantine/notifications/styles.layer.css";
 
 import "../src/styles.css";
 

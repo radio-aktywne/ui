@@ -6,6 +6,7 @@ import {
   createTheme,
   defaultVariantColorsResolver,
   Input,
+  Notification,
   Pagination,
   Paper,
   Radio,
@@ -16,6 +17,7 @@ import {
 } from "@mantine/core";
 
 import checkboxClasses from "./Checkbox.module.css";
+import notificationClasses from "./Notification.module.css";
 import paginationClasses from "./Pagination.module.css";
 import paperClasses from "./Paper.module.css";
 import radioClasses from "./Radio.module.css";
@@ -106,6 +108,13 @@ export const theme = createTheme({
     Input: Input.extend({
       defaultProps: {
         variant: "filled",
+      },
+    }),
+    Notification: Notification.extend({
+      classNames: {
+        body: notificationClasses.body,
+        icon: notificationClasses.icon,
+        root: notificationClasses.root,
       },
     }),
     Pagination: Pagination.extend({

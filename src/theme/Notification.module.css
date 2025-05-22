@@ -1,0 +1,20 @@
+@layer radio-aktywne {
+  .body {
+    margin-inline-end: var(--mantine-spacing-xs);
+  }
+
+  .icon {
+    margin-inline-end: var(--mantine-spacing-xs);
+  }
+
+  .root {
+    --mantine-color-shadow: var(--notification-color);
+    --mantine-shadow-sm: 0.25rem -0.25rem var(--mantine-color-shadow);
+    box-shadow: var(--mantine-shadow-sm);
+    padding: var(--mantine-spacing-xs);
+  }
+
+  .root::before {
+    display: none;
+  }
+}
