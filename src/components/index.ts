@@ -4,6 +4,8 @@ export { List } from "./list";
 export type { ListInput } from "./list";
 export { ListItem } from "./list-item";
 export type { ListItemInput } from "./list-item";
+export { Logo } from "./logo";
+export type { LogoInput } from "./logo";
 export { MainLayout } from "./main-layout";
 export type { MainLayoutInput } from "./main-layout";
 export { MasterDetailLayout } from "./master-detail-layout";
