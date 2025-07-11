@@ -3,6 +3,7 @@
 import "./styles.css";
 
 export {
+  Center,
   FloatingMenu,
   List,
   ListItem,
@@ -16,6 +17,7 @@ export {
   UserMenu,
 } from "./components";
 export type {
+  CenterInput,
   FloatingMenuInput,
   ListInput,
   ListItemInput,
