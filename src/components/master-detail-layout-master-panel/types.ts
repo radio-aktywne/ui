@@ -3,6 +3,7 @@ import {
   GridColProps as MantineGridColProps,
 } from "@mantine/core";
 
+import { CenterInput } from "../center";
 import { PaperInput } from "../paper";
 
 export type MasterDetailLayoutMasterPanelInput = {
@@ -14,4 +15,5 @@ export type MasterDetailLayoutMasterPanelInput = {
 
   /** Column span */
   span?: MantineGridColProps["span"];
-} & PaperInput;
+} & Omit<PaperInput, "children"> &
+  Pick<CenterInput, "children">;

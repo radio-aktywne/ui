@@ -1,3 +1,5 @@
+export { Center } from "./center";
+export type { CenterInput } from "./center";
 export { FloatingMenu } from "./floating-menu";
 export type { FloatingMenuInput } from "./floating-menu";
 export { List } from "./list";

@@ -1,0 +1,11 @@
+@layer radio-aktywne {
+  .center {
+    align-items: safe center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: safe center;
+    overflow: auto;
+    width: 100%;
+  }
+}
