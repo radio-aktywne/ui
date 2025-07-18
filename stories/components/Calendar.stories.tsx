@@ -18,8 +18,9 @@ const meta = {
   },
   render: (args) => {
     const now = dayjs();
+
     return (
-      <Calendar {...args} current={now}>
+      <Calendar {...args} current={now} now={now}>
         <Calendar.Item current={now} end={now.add(1, "hour")} start={now}>
           <Text>Event</Text>
         </Calendar.Item>
