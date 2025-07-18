@@ -16,11 +16,11 @@ export function Calendar({
   className,
   current,
   grow = true,
+  now,
   ...props
 }: CalendarInput) {
-  const localNow = dayjs().local();
-  const localCurrent =
-    current === undefined ? localNow : dayjs(current).local();
+  const localNow = dayjs(now).local();
+  const localCurrent = dayjs(current ?? now).local();
 
   const weekStart = localCurrent.startOf("week");
   const days = [...Array(7).keys()].map((i) => weekStart.add(i, "day"));
