@@ -3,6 +3,8 @@
 import "./styles.css";
 
 export {
+  Calendar,
+  CalendarItem,
   Center,
   FloatingMenu,
   List,
@@ -22,6 +24,8 @@ export {
   UserMenu,
 } from "./components";
 export type {
+  CalendarInput,
+  CalendarItemInput,
   CenterInput,
   FloatingMenuInput,
   ListInput,

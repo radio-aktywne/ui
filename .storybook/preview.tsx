@@ -8,7 +8,7 @@ import { Preview } from "@storybook/react";
 import { useEffect } from "react";
 import { useDarkMode } from "storybook-dark-mode";
 
-import { Paper, theme } from "../src";
+import { Center, Paper, theme } from "../src";
 
 import "@mantine/core/styles.layer.css";
 import "@mantine/notifications/styles.layer.css";
@@ -50,7 +50,9 @@ export default {
               <Box h="100%" px="xl" py="xl" w="100%">
                 <Container h="100%" w="100%">
                   <Paper h="100%" w="100%">
-                    <Story />
+                    <Center>
+                      <Story />
+                    </Center>
                   </Paper>
                 </Container>
               </Box>

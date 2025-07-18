@@ -1,5 +1,6 @@
 import { Text } from "@mantine/core";
 import { Meta, StoryObj } from "@storybook/react";
+import { Fragment } from "react";
 
 import { TableGrid } from "../../src";
 
@@ -24,6 +25,9 @@ const meta = {
         type: "number",
       },
     },
+    grow: {
+      control: "boolean",
+    },
     rows: {
       control: {
         min: 1,
@@ -34,7 +38,7 @@ const meta = {
   component: TableGrid,
   parameters: {
     controls: {
-      include: ["cellHeight", "cellWidth", "columns", "rows"],
+      include: ["cellHeight", "cellWidth", "columns", "grow", "rows"],
     },
   },
   render: (args) => {
@@ -51,8 +55,8 @@ const meta = {
           </TableGrid.ColumnsHeader>
         ))}
         {[...Array(rows).keys()].map((_, index) => (
-          <>
-            <TableGrid.RowsHeader key={index}>
+          <Fragment key={index}>
+            <TableGrid.RowsHeader>
               <Text>Row {index + 1}</Text>
             </TableGrid.RowsHeader>
             {[...Array(columns).keys()].map((_, cellIndex) => (
@@ -62,7 +66,7 @@ const meta = {
                 </Text>
               </TableGrid.Cell>
             ))}
-          </>
+          </Fragment>
         ))}
       </TableGrid>
     );

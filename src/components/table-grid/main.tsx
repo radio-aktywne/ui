@@ -14,13 +14,14 @@ export function TableGrid({
   cellWidth = "minmax(0, 1fr)",
   className,
   columns,
+  grow = false,
   rows,
   style,
   ...props
 }: TableGridInput) {
   return (
     <Box
-      className={clsx(classes.grid, className)}
+      className={clsx(classes.grid, grow && classes.grow, className)}
       style={{
         ...style,
         "--cell-height": cellHeight,

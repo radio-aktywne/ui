@@ -4,3 +4,7 @@
   grid-template-rows: auto repeat(var(--rows), var(--cell-height));
   position: relative;
 }
+
+.grow {
+  width: 100%;
+}

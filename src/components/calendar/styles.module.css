@@ -1,0 +1,37 @@
+.cell {
+  position: relative;
+}
+
+.cellEven {
+  background-color: var(--mantine-color-foreground-alternative);
+}
+
+.cellOdd {
+  background-color: var(--mantine-color-foreground);
+}
+
+.columnsHeader {
+  align-items: center;
+  background-color: var(--mantine-color-midground);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5em 0.5em;
+}
+
+.corner {
+  background-color: var(--mantine-color-midground);
+}
+
+.grid {
+  background-color: var(--mantine-color-midground);
+}
+
+.rowsHeader {
+  align-items: center;
+  background-color: var(--mantine-color-midground);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em 0.5em;
+}
