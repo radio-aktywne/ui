@@ -14,6 +14,11 @@ export {
   MasterDetailLayoutMasterPanel,
   PageLayout,
   Paper,
+  TableGrid,
+  TableGridCell,
+  TableGridColumnsHeader,
+  TableGridCorner,
+  TableGridRowsHeader,
   UserMenu,
 } from "./components";
 export type {
@@ -28,6 +33,11 @@ export type {
   MasterDetailLayoutMasterPanelInput,
   PageLayoutInput,
   PaperInput,
+  TableGridCellInput,
+  TableGridColumnsHeaderInput,
+  TableGridCornerInput,
+  TableGridInput,
+  TableGridRowsHeaderInput,
   UserMenuInput,
 } from "./components";
 export { theme } from "./theme";
