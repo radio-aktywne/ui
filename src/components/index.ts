@@ -20,5 +20,19 @@ export { PageLayout } from "./page-layout";
 export type { PageLayoutInput } from "./page-layout";
 export { Paper } from "./paper";
 export type { PaperInput } from "./paper";
+export {
+  TableGrid,
+  TableGridCell,
+  TableGridColumnsHeader,
+  TableGridCorner,
+  TableGridRowsHeader,
+} from "./table-grid";
+export type {
+  TableGridCellInput,
+  TableGridColumnsHeaderInput,
+  TableGridCornerInput,
+  TableGridInput,
+  TableGridRowsHeaderInput,
+} from "./table-grid";
 export { UserMenu } from "./user-menu";
 export type { UserMenuInput } from "./user-menu";

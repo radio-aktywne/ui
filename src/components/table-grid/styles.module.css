@@ -1,0 +1,6 @@
+.grid {
+  display: grid;
+  grid-template-columns: auto repeat(var(--columns), var(--cell-width));
+  grid-template-rows: auto repeat(var(--rows), var(--cell-height));
+  position: relative;
+}
