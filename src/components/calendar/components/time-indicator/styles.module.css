@@ -1,0 +1,7 @@
+.indicator {
+  grid-column: 2 / -1;
+  grid-row: calc(var(--hour) + 2) / calc(var(--hour) + 3);
+  position: absolute;
+  top: calc(var(--minute) / 60 * 100%);
+  width: 100%;
+}

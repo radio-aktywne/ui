@@ -1,3 +1,5 @@
+export { Calendar, CalendarItem } from "./calendar";
+export type { CalendarInput, CalendarItemInput } from "./calendar";
 export { Center } from "./center";
 export type { CenterInput } from "./center";
 export { FloatingMenu } from "./floating-menu";
