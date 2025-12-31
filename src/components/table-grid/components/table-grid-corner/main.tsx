@@ -1,10 +1,14 @@
-import { Box } from "@mantine/core";
+import { createPolymorphicComponent, Box as MantineBox } from "@mantine/core";
 import clsx from "clsx";
 
+import type { BaseTableGridCornerInput, TableGridCornerInput } from "./types";
+
 import classes from "./styles.module.css";
-import { TableGridCornerInput } from "./types";
 
 /** Corner in a table grid */
-export function TableGridCorner({ className, ...props }: TableGridCornerInput) {
-  return <Box className={clsx(classes.corner, className)} {...props} />;
-}
+export const TableGridCorner = createPolymorphicComponent<
+  "div",
+  BaseTableGridCornerInput
+>(function TableGridCorner({ className, ...input }: TableGridCornerInput) {
+  return <MantineBox className={clsx(classes.corner, className)} {...input} />;
+});

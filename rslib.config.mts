@@ -14,12 +14,20 @@ export default defineConfig({
       dts: {
         bundle: true,
       },
+      experiments: {
+        advancedEsm: true,
+      },
       format: "esm",
       syntax: "esnext",
     },
   ],
   output: {
-    copy: [{ from: "src/assets", to: "assets" }],
+    copy: [
+      {
+        from: "src/assets",
+        to: "assets",
+      },
+    ],
     distPath: {
       root: "build",
     },

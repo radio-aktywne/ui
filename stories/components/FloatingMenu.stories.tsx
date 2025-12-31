@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { ActionIcon, Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 import { MdMenu } from "react-icons/md";
 
 import { FloatingMenu, PageLayout } from "../../src";
@@ -38,14 +39,15 @@ const meta = {
       layout: false,
     },
   },
-  render: (args) => (
+  render: (input) => (
     <PageLayout>
-      <FloatingMenu {...args} />
+      <FloatingMenu {...input} />
     </PageLayout>
   ),
 } satisfies Meta<typeof FloatingMenu>;
-export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

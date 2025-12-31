@@ -1,6 +1,10 @@
-import { GroupProps as MantineGroupProps } from "@mantine/core";
+import type {
+  GroupProps as MantineGroupProps,
+  PolymorphicComponentProps,
+} from "@mantine/core";
+import type { ElementType } from "react";
 
-export type ListItemInput = {
+export type BaseListItemInput = Omit<MantineGroupProps, "gap" | "p"> & {
   /** Key of `theme.spacing` or any valid CSS value for `gap`, numbers are converted to rem */
   gap?: MantineGroupProps["gap"];
 
@@ -9,4 +13,7 @@ export type ListItemInput = {
 
   /** Controls `flex-wrap` CSS property */
   wrap?: MantineGroupProps["wrap"];
-} & Omit<MantineGroupProps, "gap" | "p">;
+};
+
+export type ListItemInput<C extends ElementType = "div"> =
+  PolymorphicComponentProps<C, BaseListItemInput>;

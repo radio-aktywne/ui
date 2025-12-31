@@ -13,7 +13,8 @@ UI components 🖼️
 
 ## 💡 About
 
-Reusable UI components compatible with [Mantine](https://mantine.dev).
+`ui` contains reusable UI components
+compatible with [Mantine](https://mantine.dev).
 
 ## 🚀 Storybook
 

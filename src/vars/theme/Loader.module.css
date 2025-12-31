@@ -1,0 +1,5 @@
+@layer radio-aktywne {
+  .root::after {
+    position: absolute;
+  }
+}

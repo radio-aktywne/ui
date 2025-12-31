@@ -1,13 +1,20 @@
-import { Box } from "@mantine/core";
+import { createPolymorphicComponent, Box as MantineBox } from "@mantine/core";
 import clsx from "clsx";
 
+import type {
+  BaseTableGridColumnsHeaderInput,
+  TableGridColumnsHeaderInput,
+} from "./types";
+
 import classes from "./styles.module.css";
-import { TableGridColumnsHeaderInput } from "./types";
 
 /** Header for columns in a table grid */
-export function TableGridColumnsHeader({
+export const TableGridColumnsHeader = createPolymorphicComponent<
+  "div",
+  BaseTableGridColumnsHeaderInput
+>(function TableGridColumnsHeader({
   className,
-  ...props
+  ...input
 }: TableGridColumnsHeaderInput) {
-  return <Box className={clsx(classes.header, className)} {...props} />;
-}
+  return <MantineBox className={clsx(classes.header, className)} {...input} />;
+});

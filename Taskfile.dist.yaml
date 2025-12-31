@@ -1,4 +1,4 @@
-version: "3.39"
+version: "3.43"
 
 tasks:
   template:
@@ -8,7 +8,7 @@ tasks:
       GIT_CONFIG_GLOBAL: ""
       GIT_CONFIG_SYSTEM: ""
     cmds:
-      - >
+      - >-
         copier
         update
         --answers-file
@@ -17,7 +17,7 @@ tasks:
   flake:
     desc: Update flake.lock
     cmds:
-      - >
+      - >-
         nix
         --accept-flake-config
         --extra-experimental-features
@@ -30,7 +30,9 @@ tasks:
     desc: Format files
     cmds:
       - task: install-internal
-      - >
+        vars:
+          CLI_ARGS: ""
+      - >-
         trunk
         fmt
         {{ .CLI_ARGS }}
@@ -38,24 +40,12 @@ tasks:
     desc: Lint files
     cmds:
       - task: install-internal
-      - >
+        vars:
+          CLI_ARGS: ""
+      - >-
         trunk
         check
         {{ .CLI_ARGS }}
-  remove-node-modules:
-    desc: Clean node_modules
-    cmds:
-      - >
-        rm
-        --recursive
-        --force
-        node_modules/
-    status:
-      - >
-        test
-        '!'
-        -d
-        node_modules/
   install:
     desc: Install dependencies
     sources:
@@ -68,7 +58,7 @@ tasks:
     generates:
       - node_modules/**/*
     cmds:
-      - >
+      - >-
         npm
         install
         {{ .CLI_ARGS }}
@@ -78,39 +68,36 @@ tasks:
     cmds:
       - task: install
         vars:
-          CLI_ARGS: >
+          CLI_ARGS: >-
             --prefer-offline
             --no-audit
             --no-fund
             --quiet
             --no-progress
   update:
-    desc: Update dependencies
+    desc: Update package-lock.json
     cmds:
-      - task: install-internal
-      - >
+      - >-
         npm
-        run
-        --
         update
         {{ .CLI_ARGS }}
   clean:
     desc: Clean build outputs
     cmds:
-      - >
+      - >-
         rm
         --recursive
         --force
+        {{ .CLI_ARGS }}
         build/
     status:
-      - >
+      - >-
         test
         '!'
         -d
         build/
-  build-internal:
+  build:
     desc: Build outputs
-    internal: true
     sources:
       - src/**/*
       - flake.lock
@@ -125,24 +112,33 @@ tasks:
     generates:
       - build/**/*
     cmds:
-      - >
+      - task: install-internal
+        vars:
+          CLI_ARGS: ""
+      - >-
         npm
-        run
+        exec
         --
+        rslib
         build
         {{ .CLI_ARGS }}
-  build:
-    desc: Build outputs
+  build-internal:
+    desc: Build outputs quietly
+    internal: true
     cmds:
-      - task: install-internal
-      - task: build-internal
+      - task: build
+        vars:
+          CLI_ARGS: ""
   storybook:
     desc: Run storybook
+    interactive: true
     cmds:
       - task: install-internal
-      - >
+        vars:
+          CLI_ARGS: ""
+      - >-
         npm
-        run
+        exec
         --
         storybook
         {{ .CLI_ARGS | default "dev --host 0.0.0.0" }}

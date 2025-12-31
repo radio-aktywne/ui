@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
 
 import { Logo } from "../../src";
 
@@ -9,9 +9,10 @@ const meta = {
       include: [],
     },
   },
-} satisfies Meta<typeof Logo>;
-export default meta;
+} satisfies Meta<typeof Logo<"img">>;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

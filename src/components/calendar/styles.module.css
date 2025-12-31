@@ -2,21 +2,21 @@
   position: relative;
 }
 
-.cellEven {
+.cell-even {
   background-color: var(--mantine-color-foreground-alternative);
 }
 
-.cellOdd {
+.cell-odd {
   background-color: var(--mantine-color-foreground);
 }
 
-.columnsHeader {
+.columns-header {
   align-items: center;
   background-color: var(--mantine-color-midground);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5em 0.5em;
+  padding: 0.5em;
 }
 
 .corner {
@@ -27,7 +27,7 @@
   background-color: var(--mantine-color-midground);
 }
 
-.rowsHeader {
+.rows-header {
   align-items: center;
   background-color: var(--mantine-color-midground);
   display: flex;

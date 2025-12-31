@@ -1,10 +1,4 @@
-name: Storybook
-
-# Only one workflow can run at a time
-# If there is newer workflow in progress, cancel older ones
-concurrency:
-  group: storybook
-  cancel-in-progress: true
+name: Build
 
 # Put 'on' in quotes to avoid YAML parsing error
 "on":
@@ -16,10 +10,24 @@ concurrency:
       - main
     # Run only on changes to relevant files
     paths:
-      - .github/workflows/storybook.yaml
-      - .storybook/**
+      - .github/workflows/build.yaml
       - src/**
-      - stories/**
+      - flake.lock
+      - "*.nix"
+      - package-lock.json
+      - package.json
+      - postcss.config.mjs
+      - rslib.config.mts
+      - Taskfile.dist.yaml
+      - tsconfig.json
+  # Run also on pull requests to main branch
+  pull_request:
+    branches:
+      - main
+    # Run only on changes to relevant files
+    paths:
+      - .github/workflows/build.yaml
+      - src/**
       - flake.lock
       - "*.nix"
       - package-lock.json
@@ -31,18 +39,16 @@ concurrency:
 
 jobs:
   build:
-    name: Build storybook
+    name: Build
     # Pin version of Ubuntu to avoid breaking changes
     runs-on: ubuntu-24.04
     # Use reasonable timeout to avoid stuck workflows
-    timeout-minutes: 10
+    timeout-minutes: 30
     env:
       NIX_CACHE_DIR: /home/runner/.nixcache/
     permissions:
       # Needed to checkout code
       contents: read
-      # Needed to upload page artifact
-      pages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v5.0.0
@@ -51,12 +57,12 @@ jobs:
         id: cache-nix
         with:
           path: ${{ env.NIX_CACHE_DIR }}
-          key: storybook-nix
+          key: build-nix
       - name: Setup modules cache
         uses: actions/cache@v4.3.0
         with:
           path: node_modules/
-          key: storybook-modules
+          key: build-modules
       - name: Install Nix
         uses: cachix/install-nix-action@v31.8.4
         with:
@@ -69,27 +75,15 @@ jobs:
           nix-store
           --import
           < ${{ env.NIX_CACHE_DIR }}/archive.nar
-      - name: Build storybook
-        env:
-          STORYBOOK_BASE_PATH: /ui/
+      - name: Build
         run: >-
           nix
           develop
-          ./#storybook
+          ./#build
           --command
           --
           task
-          storybook
-          --
           build
-          --output-dir
-          .storybook/build/
-      - name: Setup Pages
-        uses: actions/configure-pages@v5.0.0
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3.0.1
-        with:
-          path: .storybook/build/
       # See: https://github.com/cachix/install-nix-action/issues/56
       - name: Export Nix store cache
         if: "!cancelled()"
@@ -101,24 +95,3 @@ jobs:
           nix-store
           --export $(find /nix/store/ -maxdepth 1 -name '*-*')
           > ${{ env.NIX_CACHE_DIR }}/archive.nar
-  deploy:
-    name: Deploy storybook
-    # Run only if build job succeeded
-    needs: build
-    # Pin version of Ubuntu to avoid breaking changes
-    runs-on: ubuntu-24.04
-    # Use reasonable timeout to avoid stuck workflows
-    timeout-minutes: 10
-    # Use Pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      # Needed to to deploy to Pages
-      pages: write
-      # Also needed to deploy to Pages
-      id-token: write
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4.0.5

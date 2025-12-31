@@ -1,8 +1,11 @@
-import { BoxProps, ElementProps } from "@mantine/core";
+import type {
+  BoxComponentProps as MantineBoxComponentProps,
+  PolymorphicComponentProps,
+} from "@mantine/core";
+import type { Dayjs } from "dayjs";
+import type { ElementType, PropsWithoutRef } from "react";
 
-import { Dayjs } from "./dayjs";
-
-export type CalendarItemInput = {
+export type BaseCalendarItemInput = MantineBoxComponentProps & {
   /** Color of the calendar item */
   color?: string;
 
@@ -14,5 +17,8 @@ export type CalendarItemInput = {
 
   /** Start time of the calendar item */
   start: Dayjs;
-} & BoxProps &
-  Omit<ElementProps<"div", keyof BoxProps>, "color">;
+};
+
+export type CalendarItemInput<C extends ElementType = "div"> = PropsWithoutRef<
+  PolymorphicComponentProps<C, BaseCalendarItemInput>
+>;

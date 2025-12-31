@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 0.10.0
+_src_path: gh:radio-aktywne/template-generic
+accountname: radio-aktywne
+description: UI components 🖼️
+docs: false
+projectname: ui
+releases: true
+reponame: ui
+repourl: https://github.com/radio-aktywne/ui

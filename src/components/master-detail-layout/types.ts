@@ -1,6 +1,13 @@
-import { GridProps as MantineGridProps } from "@mantine/core";
+import type {
+  GridProps as MantineGridProps,
+  PolymorphicComponentProps,
+} from "@mantine/core";
+import type { ElementType } from "react";
 
-export type MasterDetailLayoutInput = {
+export type BaseMasterDetailLayoutInput = Omit<
+  MantineGridProps,
+  "columns" | "grow" | "gutter" | "justify"
+> & {
   /** Number of columns in grid determining panels size */
   columns?: MantineGridProps["columns"];
 
@@ -12,4 +19,7 @@ export type MasterDetailLayoutInput = {
 
   /** Sets `justify-content` */
   justify?: MantineGridProps["justify"];
-} & Omit<MantineGridProps, "columns" | "grow" | "gutter" | "justify">;
+};
+
+export type MasterDetailLayoutInput<C extends ElementType = "div"> =
+  PolymorphicComponentProps<C, BaseMasterDetailLayoutInput>;

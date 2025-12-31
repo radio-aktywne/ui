@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
 
 import { PageLayout, UserMenu } from "../../src";
 
@@ -40,14 +40,15 @@ const meta = {
       layout: false,
     },
   },
-  render: (args) => (
+  render: (input) => (
     <PageLayout>
-      <UserMenu {...args} />
+      <UserMenu {...input} />
     </PageLayout>
   ),
 } satisfies Meta<typeof UserMenu>;
-export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

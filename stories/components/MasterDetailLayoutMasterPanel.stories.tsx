@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 import {
   MasterDetailLayout,
@@ -33,26 +34,27 @@ const meta = {
       layout: false,
     },
   },
-} satisfies Meta<typeof MasterDetailLayoutMasterPanel>;
-export default meta;
+} satisfies Meta<typeof MasterDetailLayoutMasterPanel<"div">>;
 
 type Story = StoryObj<typeof meta>;
 
+export default meta;
+
 export const Singular: Story = {
-  render: (args) => (
+  render: (input) => (
     <PageLayout>
       <MasterDetailLayout>
-        <MasterDetailLayoutMasterPanel {...args} />
+        <MasterDetailLayoutMasterPanel {...input} />
       </MasterDetailLayout>
     </PageLayout>
   ),
 } satisfies Story;
 
 export const Dual: Story = {
-  render: (args) => (
+  render: (input) => (
     <PageLayout>
       <MasterDetailLayout>
-        <MasterDetailLayoutMasterPanel {...args} />
+        <MasterDetailLayoutMasterPanel {...input} />
         <MasterDetailLayoutDetailPanel>
           <Text>Detail</Text>
         </MasterDetailLayoutDetailPanel>

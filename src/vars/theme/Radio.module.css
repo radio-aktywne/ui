@@ -1,9 +1,9 @@
 @layer radio-aktywne {
   .radio {
-    &:not(:checked):not(:disabled) {
+    border: none;
+
+    &:not(:checked, :disabled) {
       background-color: var(--mantine-color-default);
     }
-
-    border: none;
   }
 }

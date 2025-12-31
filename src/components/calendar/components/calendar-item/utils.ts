@@ -1,4 +1,4 @@
-import { Dayjs } from "./dayjs";
+import type { Dayjs } from "dayjs";
 
 export function splitIntoDailyParts(start: Dayjs, end: Dayjs) {
   const startMidnight = start.startOf("day");

@@ -1,18 +1,25 @@
-import { Divider } from "@mantine/core";
+import {
+  createPolymorphicComponent,
+  Divider as MantineDivider,
+} from "@mantine/core";
 import clsx from "clsx";
 
-import dayjs from "./dayjs";
+import type { BaseTimeIndicatorInput, TimeIndicatorInput } from "./types";
+
+import { dayjs } from "../../../../vars/dayjs";
 import classes from "./styles.module.css";
-import { TimeIndicatorInput } from "./types";
 
 /** Indicator of the current time in the calendar */
-export function TimeIndicator({
+export const TimeIndicator = createPolymorphicComponent<
+  "div",
+  BaseTimeIndicatorInput
+>(function TimeIndicator({
   className,
   color = "ra-red",
   current,
   style,
   time,
-  ...props
+  ...input
 }: TimeIndicatorInput) {
   const localCurrent = dayjs(current).local();
   const localTime = dayjs(time).local();
@@ -23,7 +30,7 @@ export function TimeIndicator({
   if (!localTime.isBetween(weekStart, weekEnd, null, "[)")) return null;
 
   return (
-    <Divider
+    <MantineDivider
       className={clsx(classes.indicator, className)}
       color={color}
       style={{
@@ -31,7 +38,7 @@ export function TimeIndicator({
         "--hour": localTime.hour(),
         "--minute": localTime.minute(),
       }}
-      {...props}
+      {...input}
     />
   );
-}
+});

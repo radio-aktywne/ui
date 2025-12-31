@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 import dayjs from "dayjs";
 
 import { Calendar } from "../../src";
@@ -16,20 +17,21 @@ const meta = {
       include: ["grow"],
     },
   },
-  render: (args) => {
+  render: (input) => {
     const now = dayjs();
 
     return (
-      <Calendar {...args} current={now} now={now}>
+      <Calendar {...input} current={now} now={now}>
         <Calendar.Item current={now} end={now.add(1, "hour")} start={now}>
           <Text>Event</Text>
         </Calendar.Item>
       </Calendar>
     );
   },
-} satisfies Meta<typeof Calendar>;
-export default meta;
+} satisfies Meta<typeof Calendar<"div">>;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

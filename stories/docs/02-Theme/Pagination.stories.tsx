@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Pagination } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
   args: {
@@ -16,8 +17,9 @@ const meta = {
   },
   tags: ["!autodocs", "!dev", "!test"],
 } satisfies Meta<typeof Pagination>;
-export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

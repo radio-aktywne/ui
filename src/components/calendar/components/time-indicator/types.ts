@@ -1,11 +1,20 @@
-import { DividerProps } from "@mantine/core";
+import type {
+  DividerProps as MantineDividerProps,
+  PolymorphicComponentProps,
+} from "@mantine/core";
+import type { Dayjs } from "dayjs";
+import type { ElementType } from "react";
 
-import { Dayjs } from "./dayjs";
-
-export type TimeIndicatorInput = {
+export type BaseTimeIndicatorInput = Omit<
+  MantineDividerProps,
+  "orientation"
+> & {
   /** Any date within the week currently being displayed */
   current: Dayjs;
 
   /** Time to indicate */
   time: Dayjs;
-} & Omit<DividerProps, "orientation">;
+};
+
+export type TimeIndicatorInput<C extends ElementType = "div"> =
+  PolymorphicComponentProps<C, BaseTimeIndicatorInput>;

@@ -1,14 +1,17 @@
+import type { ElementType } from "react";
+
 import {
   Container as MantineContainer,
   GridCol as MantineGridCol,
 } from "@mantine/core";
 
+import type { MasterDetailLayoutMasterPanelInput } from "./types";
+
 import { Center } from "../center";
 import { Paper } from "../paper";
-import { MasterDetailLayoutMasterPanelInput } from "./types";
 
 /** Master panel for master-detail layout */
-export function MasterDetailLayoutMasterPanel({
+export function MasterDetailLayoutMasterPanel<C extends ElementType = "div">({
   children,
   fluid,
   h = "100%",
@@ -16,11 +19,12 @@ export function MasterDetailLayoutMasterPanel({
   size = "sm",
   span = 4,
   ...input
-}: MasterDetailLayoutMasterPanelInput) {
+}: MasterDetailLayoutMasterPanelInput<C>) {
   return (
     <MantineGridCol span={span}>
       <MantineContainer fluid={fluid} h="100%" size={size}>
-        <Paper h={h} shadowColor={shadowColor} {...input}>
+        {/*  eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+        <Paper<any> h={h} shadowColor={shadowColor} {...input}>
           <Center>{children}</Center>
         </Paper>
       </MantineContainer>
