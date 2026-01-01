@@ -4,7 +4,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./build/index.mjs",
+      "import": "./build/index.js",
       "types": "./build/index.d.ts"
     },
     "./styles.css": "./build/index.css",
