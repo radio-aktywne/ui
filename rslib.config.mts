@@ -14,9 +14,6 @@ export default defineConfig({
       dts: {
         bundle: true,
       },
-      experiments: {
-        advancedEsm: true,
-      },
       format: "esm",
       syntax: "esnext",
     },
