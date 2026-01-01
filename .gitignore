@@ -17,10 +17,14 @@
 /build/
 
 # Debug
-npm-debug.log*
+*.log
 
 # Typescript
 *.tsbuildinfo
 
 # Rslib
 /.rslib/
+
+# Storybook
+/storybook-static/
+/.storybook/build/

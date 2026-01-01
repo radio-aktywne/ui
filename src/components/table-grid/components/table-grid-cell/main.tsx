@@ -1,10 +1,14 @@
-import { Box } from "@mantine/core";
+import { createPolymorphicComponent, Box as MantineBox } from "@mantine/core";
 import clsx from "clsx";
 
+import type { BaseTableGridCellInput, TableGridCellInput } from "./types";
+
 import classes from "./styles.module.css";
-import { TableGridCellInput } from "./types";
 
 /** Cell in a table grid */
-export function TableGridCell({ className, ...props }: TableGridCellInput) {
-  return <Box className={clsx(classes.cell, className)} {...props} />;
-}
+export const TableGridCell = createPolymorphicComponent<
+  "div",
+  BaseTableGridCellInput
+>(function TableGridCell({ className, ...input }: TableGridCellInput) {
+  return <MantineBox className={clsx(classes.cell, className)} {...input} />;
+});

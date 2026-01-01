@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { DEFAULT_THEME, Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 import { theme } from "../../../src";
 import { Typeset } from "./Typeset";
@@ -18,17 +19,18 @@ const meta = {
     },
   },
   tags: ["!autodocs", "!dev", "!test"],
-} satisfies Meta<typeof Text>;
-export default meta;
+} satisfies Meta<typeof Text<"p">>;
 
 type Story = StoryObj<typeof meta>;
 
+export default meta;
+
 export const Sizes = {
-  render: (props) => (
+  render: (input) => (
     <Typeset
       component={Text<"p">}
       property="size"
-      rest={props}
+      rest={input}
       values={Object.keys({
         ...DEFAULT_THEME.fontSizes,
         ...theme.fontSizes,
@@ -38,11 +40,11 @@ export const Sizes = {
 } satisfies Story;
 
 export const Weights = {
-  render: (props) => (
+  render: (input) => (
     <Typeset
       component={Text<"p">}
       property="fw"
-      rest={props}
+      rest={input}
       values={[
         { label: "100", value: 100 },
         { label: "200", value: 200 },

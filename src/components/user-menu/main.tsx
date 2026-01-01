@@ -1,10 +1,11 @@
 import { ActionIcon, Box, Text, useMantineTheme } from "@mantine/core";
 import { MdLogout, MdPerson } from "react-icons/md";
 
+import type { UserMenuInput } from "./types";
+
 import { FloatingMenu } from "../floating-menu";
 import { List } from "../list";
 import { ListItem } from "../list-item";
-import { UserMenuInput } from "./types";
 
 /** User menu */
 export function UserMenu({

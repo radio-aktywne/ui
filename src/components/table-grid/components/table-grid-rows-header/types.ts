@@ -1,4 +1,10 @@
-import { BoxProps, ElementProps } from "@mantine/core";
+import type {
+  BoxComponentProps as MantineBoxComponentProps,
+  PolymorphicComponentProps,
+} from "@mantine/core";
+import type { ElementType } from "react";
 
-export type TableGridRowsHeaderInput = BoxProps &
-  ElementProps<"div", keyof BoxProps>;
+export type BaseTableGridRowsHeaderInput = MantineBoxComponentProps;
+
+export type TableGridRowsHeaderInput<C extends ElementType = "div"> =
+  PolymorphicComponentProps<C, BaseTableGridRowsHeaderInput>;

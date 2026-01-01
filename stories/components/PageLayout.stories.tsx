@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Button } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
-import { Meta, StoryObj } from "@storybook/react";
 
 import { PageLayout, Paper } from "../../src";
 
@@ -49,8 +50,9 @@ const meta = {
     },
   },
 } satisfies Meta<typeof PageLayout>;
-export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

@@ -1,11 +1,18 @@
-import { Grid as MantineGrid } from "@mantine/core";
+import { createPolymorphicComponent, Grid as MantineGrid } from "@mantine/core";
 import { clsx } from "clsx";
 
+import type {
+  BaseMasterDetailLayoutInput,
+  MasterDetailLayoutInput,
+} from "./types";
+
 import classes from "./styles.module.css";
-import { MasterDetailLayoutInput } from "./types";
 
 /** Layout with master and detail panels */
-export function MasterDetailLayout({
+export const MasterDetailLayout = createPolymorphicComponent<
+  "div",
+  BaseMasterDetailLayoutInput
+>(function MasterDetailLayout({
   classNames,
   columns = 12,
   grow = true,
@@ -40,4 +47,4 @@ export function MasterDetailLayout({
       {...input}
     />
   );
-}
+});

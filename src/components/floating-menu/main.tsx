@@ -1,6 +1,6 @@
 import { Affix as MantineAffix, Menu as MantineMenu } from "@mantine/core";
 
-import { FloatingMenuInput } from "./types";
+import type { FloatingMenuInput } from "./types";
 
 /** Floating menu in the corner of the screen */
 export function FloatingMenu({

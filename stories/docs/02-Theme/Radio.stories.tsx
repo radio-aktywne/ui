@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Radio, Stack } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
   component: Radio,
@@ -11,7 +12,7 @@ const meta = {
       },
     },
   },
-  render: (props) => (
+  render: ({ ref, ...input }) => (
     <Radio.Group name="radio">
       <Stack>
         {["One", "Two", "Three"].map((label, index) => (
@@ -19,7 +20,7 @@ const meta = {
             key={index}
             label={label}
             value={String(index + 1)}
-            {...props}
+            {...input}
           />
         ))}
       </Stack>
@@ -27,8 +28,9 @@ const meta = {
   ),
   tags: ["!autodocs", "!dev", "!test"],
 } satisfies Meta<typeof Radio>;
-export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

@@ -10,6 +10,7 @@
   .root {
     --mantine-color-shadow: var(--notification-color);
     --mantine-shadow-sm: 0.25rem -0.25rem var(--mantine-color-shadow);
+
     box-shadow: var(--mantine-shadow-sm);
     padding: var(--mantine-spacing-xs);
   }

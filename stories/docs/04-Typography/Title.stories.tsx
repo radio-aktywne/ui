@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Title } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 import { Typeset } from "./Typeset";
 
@@ -18,16 +19,17 @@ const meta = {
   },
   tags: ["!autodocs", "!dev", "!test"],
 } satisfies Meta<typeof Title>;
-export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+export default meta;
+
 export const Orders = {
-  render: (props) => (
+  render: (input) => (
     <Typeset
       component={Title}
       property="order"
-      rest={props}
+      rest={input}
       values={[
         { label: "6", value: 6 },
         { label: "5", value: 5 },

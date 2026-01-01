@@ -1,6 +1,6 @@
-import { MantineShadow, MantineSize } from "@mantine/core";
+import type { MantineShadow, MantineSize } from "@mantine/core";
 
-import { FloatingMenuInput } from "../floating-menu";
+import type { FloatingMenuInput } from "../floating-menu";
 
 type User = {
   /** Display name of the user */
@@ -20,7 +20,10 @@ type Items = {
   logout: LogoutItem;
 };
 
-export type UserMenuInput = {
+export type UserMenuInput = Omit<
+  FloatingMenuInput,
+  "children" | "position" | "shadow"
+> & {
   /** Color of the menu button */
   color?: "blue" | "green" | "primary" | "red" | "yellow";
 
@@ -35,4 +38,4 @@ export type UserMenuInput = {
 
   /** User data */
   user: User;
-} & Omit<FloatingMenuInput, "children" | "position" | "shadow">;
+};

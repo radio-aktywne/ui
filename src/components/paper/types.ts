@@ -1,10 +1,11 @@
-import {
-  ElementProps,
+import type {
   PaperProps as MantinePaperProps,
   MantineShadowsValues,
+  PolymorphicComponentProps,
 } from "@mantine/core";
+import type { ElementType } from "react";
 
-export type PaperInput = {
+export type BasePaperInput = Omit<MantinePaperProps, "shadow"> & {
   /** Whether to center content */
   center?: boolean;
 
@@ -13,5 +14,7 @@ export type PaperInput = {
 
   /** Size of the shadow */
   shadowSize?: keyof MantineShadowsValues;
-} & ElementProps<"div", keyof MantinePaperProps> &
-  Omit<MantinePaperProps, "shadow">;
+};
+
+export type PaperInput<C extends ElementType = "div"> =
+  PolymorphicComponentProps<C, BasePaperInput>;

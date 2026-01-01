@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
   args: {
@@ -15,9 +16,10 @@ const meta = {
     },
   },
   tags: ["!autodocs", "!dev", "!test"],
-} satisfies Meta<typeof Text>;
-export default meta;
+} satisfies Meta<typeof Text<"p">>;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

@@ -5,8 +5,9 @@ import {
 import { Notifications as MantineNotifications } from "@mantine/notifications";
 import { clsx } from "clsx";
 
+import type { PageLayoutInput } from "./types";
+
 import classes from "./styles.module.css";
-import { PageLayoutInput } from "./types";
 
 /** Main layout for pages */
 export function PageLayout({

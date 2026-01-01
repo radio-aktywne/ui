@@ -1,16 +1,11 @@
-import {
-  Box,
-  Container,
-  MantineProvider,
-  useMantineColorScheme,
-} from "@mantine/core";
-import { Preview } from "@storybook/react";
-import { useEffect } from "react";
-import { useDarkMode } from "storybook-dark-mode";
+import type { Preview } from "storybook-react-rsbuild";
+
+import { Box, Container, MantineProvider } from "@mantine/core";
 
 import { Center, Paper, theme } from "../src";
 
 import "@mantine/core/styles.layer.css";
+import "@mantine/dates/styles.layer.css";
 import "@mantine/notifications/styles.layer.css";
 
 import "../src/styles.css";
@@ -23,25 +18,13 @@ type Parameters = {
 
 export default {
   decorators: [
-    (Story) => {
-      const dark = useDarkMode();
-      const { setColorScheme } = useMantineColorScheme();
-
-      useEffect(() => {
-        setColorScheme(dark ? "dark" : "light");
-      }, [dark, setColorScheme]);
-
-      return <Story />;
-    },
     (Story, context) => {
       const parameters = context.parameters as Parameters;
       const layout = parameters.preview?.layout ?? true;
 
-      const dark = useDarkMode();
-
       return (
         <MantineProvider
-          defaultColorScheme={dark ? "dark" : "light"}
+          defaultColorScheme="dark"
           forceColorScheme="dark" // Only dark mode is supported at the moment
           theme={theme}
         >

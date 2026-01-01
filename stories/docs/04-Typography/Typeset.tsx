@@ -1,5 +1,7 @@
+import type { ComponentType, JSX, ReactNode } from "react";
+
 import { Box, Text } from "@mantine/core";
-import { ComponentType, Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 
 export type TypesetInput<P, K, V> = {
   component: ComponentType<P>;

@@ -1,4 +1,10 @@
-import { ElementProps, CenterProps as MantineCenterProps } from "@mantine/core";
+import type {
+  CenterProps as MantineCenterProps,
+  PolymorphicComponentProps,
+} from "@mantine/core";
+import type { ElementType } from "react";
 
-export type CenterInput = ElementProps<"div", keyof MantineCenterProps> &
-  MantineCenterProps;
+export type BaseCenterInput = MantineCenterProps;
+
+export type CenterInput<C extends ElementType = "div"> =
+  PolymorphicComponentProps<C, BaseCenterInput>;

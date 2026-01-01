@@ -1,10 +1,12 @@
-import { GridColProps as MantineGridColProps } from "@mantine/core";
+import type { GridColProps as MantineGridColProps } from "@mantine/core";
+import type { ElementType } from "react";
 
-import { CenterInput } from "../center";
-import { PaperInput } from "../paper";
+import type { CenterInput } from "../center";
+import type { PaperInput } from "../paper";
 
-export type MasterDetailLayoutDetailPanelInput = {
-  /** Column span */
-  span?: MantineGridColProps["span"];
-} & Omit<PaperInput, "children"> &
-  Pick<CenterInput, "children">;
+export type MasterDetailLayoutDetailPanelInput<C extends ElementType = "div"> =
+  Omit<PaperInput<C>, "children"> &
+    Pick<CenterInput, "children"> & {
+      /** Column span */
+      span?: MantineGridColProps["span"];
+    };

@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Title } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 import { Center } from "../../src";
 
@@ -20,9 +21,10 @@ const meta = {
       include: [],
     },
   },
-} satisfies Meta<typeof Center>;
-export default meta;
+} satisfies Meta<typeof Center<"div">>;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

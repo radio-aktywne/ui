@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { ActionIcon, Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 import { MdDelete, MdEdit } from "react-icons/md";
 
 import { List, ListItem } from "../../src";
@@ -29,9 +30,10 @@ const meta = {
       include: ["grow"],
     },
   },
-} satisfies Meta<typeof List>;
-export default meta;
+} satisfies Meta<typeof List<"div">>;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 import { Fragment } from "react";
 
 import { TableGrid } from "../../src";
@@ -41,11 +42,11 @@ const meta = {
       include: ["cellHeight", "cellWidth", "columns", "grow", "rows"],
     },
   },
-  render: (args) => {
-    const { columns, rows } = args;
+  render: (input) => {
+    const { columns, rows } = input;
 
     return (
-      <TableGrid {...args}>
+      <TableGrid {...input}>
         <TableGrid.Corner>
           <Text>Corner</Text>
         </TableGrid.Corner>
@@ -71,9 +72,10 @@ const meta = {
       </TableGrid>
     );
   },
-} satisfies Meta<typeof TableGrid>;
-export default meta;
+} satisfies Meta<typeof TableGrid<"div">>;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

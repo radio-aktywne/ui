@@ -1,5 +1,7 @@
 @layer radio-aktywne {
   .control {
+    border: none;
+
     &:where(:not([data-active])) {
       background-color: var(--mantine-color-default);
 
@@ -9,7 +11,5 @@
         }
       }
     }
-
-    border: none;
   }
 }

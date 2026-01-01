@@ -6,6 +6,7 @@ import {
   createTheme,
   defaultVariantColorsResolver,
   Input,
+  Loader,
   Notification,
   Pagination,
   Paper,
@@ -17,6 +18,7 @@ import {
 } from "@mantine/core";
 
 import checkboxClasses from "./Checkbox.module.css";
+import loaderClasses from "./Loader.module.css";
 import notificationClasses from "./Notification.module.css";
 import paginationClasses from "./Pagination.module.css";
 import paperClasses from "./Paper.module.css";
@@ -110,6 +112,11 @@ export const theme = createTheme({
         variant: "filled",
       },
     }),
+    Loader: Loader.extend({
+      classNames: {
+        root: loaderClasses.root,
+      },
+    }),
     Notification: Notification.extend({
       classNames: {
         body: notificationClasses.body,
@@ -120,6 +127,9 @@ export const theme = createTheme({
     Pagination: Pagination.extend({
       classNames: {
         control: paginationClasses.control,
+      },
+      defaultProps: {
+        py: "calc(.0625rem * var(--mantine-scale))",
       },
     }),
     Paper: Paper.extend({
@@ -142,10 +152,14 @@ export const theme = createTheme({
     Slider: Slider.extend({
       classNames: {
         label: sliderClasses.label,
+        root: sliderClasses.root,
         thumb: sliderClasses.thumb,
       },
       defaultProps: {
+        px: "calc(var(--slider-size) * 3.05)",
+        py: "calc(2.25rem * var(--mantine-scale) + 0.525 * var(--mantine-spacing-xs) + 0.025 * var(--mantine-font-size-xs))",
         radius: 0,
+        w: "100%",
       },
     }),
     Switch: Switch.extend({
@@ -154,6 +168,7 @@ export const theme = createTheme({
       },
       defaultProps: {
         radius: 0,
+        withThumbIndicator: false,
       },
     }),
     ThemeIcon: ThemeIcon.extend({

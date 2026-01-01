@@ -1,20 +1,29 @@
-import { Box, parseThemeColor, useMantineTheme } from "@mantine/core";
+import {
+  createPolymorphicComponent,
+  Box as MantineBox,
+  parseThemeColor,
+  useMantineTheme,
+} from "@mantine/core";
 import clsx from "clsx";
 
-import dayjs from "./dayjs";
+import type { BaseCalendarItemInput, CalendarItemInput } from "./types";
+
+import { dayjs } from "../../../../vars/dayjs";
 import classes from "./styles.module.css";
-import { CalendarItemInput } from "./types";
 import { splitIntoDailyParts } from "./utils";
 
 /** Item in the calendar */
-export function CalendarItem({
+export const CalendarItem = createPolymorphicComponent<
+  "div",
+  BaseCalendarItemInput
+>(function CalendarItem({
   className,
   color,
   current,
   end,
   start,
   style,
-  ...props
+  ...input
 }: CalendarItemInput) {
   const theme = useMantineTheme();
 
@@ -41,7 +50,7 @@ export function CalendarItem({
   );
 
   return partsInWeek.map((part, i) => (
-    <Box
+    <MantineBox
       className={clsx(classes.item, className)}
       key={i}
       style={{
@@ -57,7 +66,7 @@ export function CalendarItem({
         "--start-hour": part.start.hour(),
         "--start-minute": part.start.minute(),
       }}
-      {...props}
+      {...input}
     />
   ));
-}
+});

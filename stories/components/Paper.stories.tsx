@@ -1,5 +1,6 @@
+import type { Meta, StoryObj } from "storybook-react-rsbuild";
+
 import { Box, Container, Text } from "@mantine/core";
-import { Meta, StoryObj } from "@storybook/react";
 
 import { Paper } from "../../src";
 
@@ -30,16 +31,17 @@ const meta = {
       layout: false,
     },
   },
-  render: (args) => (
+  render: (input) => (
     <Box h="100%" px="xl" py="xl" w="100%">
       <Container h="100%" w="100%">
-        <Paper {...args} />
+        <Paper {...input} />
       </Container>
     </Box>
   ),
-} satisfies Meta<typeof Paper>;
-export default meta;
+} satisfies Meta<typeof Paper<"div">>;
 
 type Story = StoryObj<typeof meta>;
+
+export default meta;
 
 export const Default = {} satisfies Story;

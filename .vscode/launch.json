@@ -1,12 +1,19 @@
 {
-  "version": "0.2.0",
   "configurations": [
     {
       "name": "storybook",
-      "type": "node",
+      "outputCapture": "std",
       "request": "launch",
-      "runtimeExecutable": "task",
-      "runtimeArgs": ["storybook"]
+      "runtimeArgs": ["exec", "--", "storybook", "dev", "--host", "0.0.0.0"],
+      "runtimeExecutable": "npm",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "killOnServerStop": true,
+        "pattern": "Local:\\s+(\\S+)",
+        "uriFormat": "%s"
+      },
+      "type": "node"
     }
-  ]
+  ],
+  "version": "0.2.0"
 }
