@@ -1,3 +1,5 @@
+"use client";
+
 import type { ElementType } from "react";
 
 import { GridCol as MantineGridCol } from "@mantine/core";

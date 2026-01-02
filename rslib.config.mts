@@ -10,21 +10,15 @@ export default defineConfig({
         optionalDependencies: true,
         peerDependencies: true,
       },
-      bundle: true,
+      bundle: false,
       dts: {
-        bundle: true,
+        bundle: false,
       },
       format: "esm",
       syntax: "esnext",
     },
   ],
   output: {
-    copy: [
-      {
-        from: "src/assets",
-        to: "assets",
-      },
-    ],
     distPath: {
       root: "build",
     },
@@ -33,7 +27,7 @@ export default defineConfig({
   plugins: [pluginReact()],
   source: {
     entry: {
-      index: "src/index.ts",
+      index: "src/**/*",
     },
   },
 });

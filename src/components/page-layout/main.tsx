@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Center as MantineCenter,
   Container as MantineContainer,

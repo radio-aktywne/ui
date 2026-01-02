@@ -1,3 +1,5 @@
+"use client";
+
 import { ActionIcon, Box, Text, useMantineTheme } from "@mantine/core";
 import { MdLogout, MdPerson } from "react-icons/md";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import type { ElementType } from "react";
 
 import { Container as MantineContainer } from "@mantine/core";
