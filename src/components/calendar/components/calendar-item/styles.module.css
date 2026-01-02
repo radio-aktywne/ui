@@ -1,21 +1,23 @@
-.item {
-  align-items: safe center;
-  background-color: var(--mantine-color-background);
-  border-left: 0.2em solid var(--border-color);
-  color: var(--mantine-color-black);
-  display: flex;
-  flex-direction: column;
-  grid-column: calc(var(--day) + 1) / calc(var(--day) + 2);
-  grid-row: calc(var(--start-hour) + 2) / calc(var(--start-hour) + 3);
-  height: calc(
-    (var(--end-hour) - var(--start-hour)) * 100% +
-      (var(--end-minute) - var(--start-minute)) / 60 * 100%
-  );
-  justify-content: safe center;
-  overflow: hidden;
-  padding-left: 0.3em;
-  padding-right: 0.5em;
-  position: absolute;
-  top: calc(var(--start-minute) / 60 * 100%);
-  width: 90%;
+@layer radio-aktywne {
+  .item {
+    align-items: safe center;
+    background-color: var(--mantine-color-background);
+    border-left: 0.2em solid var(--border-color);
+    color: var(--mantine-color-black);
+    display: flex;
+    flex-direction: column;
+    grid-column: calc(var(--day) + 1) / calc(var(--day) + 2);
+    grid-row: calc(var(--start-hour) + 2) / calc(var(--start-hour) + 3);
+    height: calc(
+      (var(--end-hour) - var(--start-hour)) * 100% +
+        (var(--end-minute) - var(--start-minute)) / 60 * 100%
+    );
+    justify-content: safe center;
+    overflow: hidden;
+    padding-left: 0.3em;
+    padding-right: 0.5em;
+    position: absolute;
+    top: calc(var(--start-minute) / 60 * 100%);
+    width: 90%;
+  }
 }

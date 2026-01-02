@@ -1,7 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap";
 
-@layer mantine;
-
 @layer radio-aktywne {
   html,
   body {
@@ -9,7 +7,8 @@
     width: 100%;
   }
 
-  :root {
+  :root,
+  :host {
     --mantine-color-anchor: var(--mantine-color-ra-blue-text);
     --mantine-color-black: var(--mantine-color-dark-8);
     --mantine-color-body: var(--mantine-color-background);
