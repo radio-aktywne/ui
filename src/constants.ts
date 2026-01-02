@@ -1,0 +1,95 @@
+export const constants = {
+  theme: {
+    autoContrast: true,
+
+    colors: {
+      dark: [
+        "#fff4dc",
+        "#ded3bd",
+        "#bcb29e",
+        "#9b907e",
+        "#796f5f",
+        "#584e40",
+        "#44382c",
+        "#3a2e23",
+        "#30241a",
+        "#2b2017",
+      ],
+
+      "ra-blue": [
+        "#eaf5ff",
+        "#d6e4f4",
+        "#c2d3e9",
+        "#aec3de",
+        "#99b2d2",
+        "#85a1c7",
+        "#7190bc",
+        "#5a7ba8",
+        "#436793",
+        "#2c527f",
+      ],
+
+      "ra-green": [
+        "#e6fcf4",
+        "#d1f1e5",
+        "#bde6d7",
+        "#a8dbc8",
+        "#93d0b9",
+        "#7fc5ab",
+        "#6aba9c",
+        "#53a487",
+        "#3c8e71",
+        "#25785c",
+      ],
+
+      "ra-red": [
+        "#ffeae9",
+        "#fbd2d1",
+        "#f7bab8",
+        "#f4a2a0",
+        "#f08a88",
+        "#ec726f",
+        "#e85a57",
+        "#cf3e3f",
+        "#b72127",
+        "#9e050f",
+      ],
+
+      "ra-yellow": [
+        "#fffee1",
+        "#fffdcb",
+        "#fffbb4",
+        "#fffa9e",
+        "#fff887",
+        "#fff771",
+        "#fff55a",
+        "#e4da3c",
+        "#c8be1e",
+        "#ada300",
+      ],
+    },
+
+    cursorType: "pointer",
+
+    defaultGradient: {
+      from: "ra-green.6",
+      to: "ra-green.8",
+    },
+
+    defaultRadius: 0,
+    fontFamily: '"Roboto", sans-serif',
+    fontFamilyMonospace: '"Roboto Mono", monospace',
+    luminanceThreshold: 0.33,
+    primaryColor: "ra-green",
+    primaryShade: 6,
+    respectReducedMotion: true,
+
+    shadows: {
+      lg: "0.75rem -0.75rem var(--mantine-color-shadow)",
+      md: "0.5rem -0.5rem var(--mantine-color-shadow)",
+      sm: "0.25rem -0.25rem var(--mantine-color-shadow)",
+      xl: "0.875rem -0.875rem var(--mantine-color-shadow)",
+      xs: "0.125rem -0.125rem var(--mantine-color-shadow)",
+    },
+  },
+} as const;

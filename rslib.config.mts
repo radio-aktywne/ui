@@ -4,14 +4,10 @@ import { defineConfig } from "@rslib/core";
 export default defineConfig({
   lib: [
     {
-      autoExternal: {
-        dependencies: false,
-        devDependencies: true,
-        optionalDependencies: true,
-        peerDependencies: true,
-      },
+      autoExtension: true,
       bundle: false,
       dts: {
+        autoExtension: true,
         bundle: false,
       },
       format: "esm",
