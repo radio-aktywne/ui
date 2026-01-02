@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createPolymorphicComponent,
   Image as MantineImage,

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createPolymorphicComponent,
   Box as MantineBox,

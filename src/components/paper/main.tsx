@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createPolymorphicComponent,
   Paper as MantinePaper,

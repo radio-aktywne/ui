@@ -1,3 +1,5 @@
+"use client";
+
 import { Affix as MantineAffix, Menu as MantineMenu } from "@mantine/core";
 
 import type { FloatingMenuInput } from "./types";

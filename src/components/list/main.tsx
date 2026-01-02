@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createPolymorphicComponent,
   Stack as MantineStack,

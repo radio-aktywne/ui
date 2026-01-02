@@ -1,7 +1,3 @@
-"use client";
-
-import "./styles.css";
-
 export { Calendar, CalendarItem } from "./components/calendar";
 export type { CalendarInput, CalendarItemInput } from "./components/calendar";
 

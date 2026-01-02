@@ -1,3 +1,5 @@
+"use client";
+
 import { createPolymorphicComponent, Grid as MantineGrid } from "@mantine/core";
 import { clsx } from "clsx";
 
