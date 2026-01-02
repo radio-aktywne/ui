@@ -1,12 +1,13 @@
 {
   "name": "@radio-aktywne/ui",
   "private": true,
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./build/index.mjs",
+      "import": "./build/index.js",
       "types": "./build/index.d.ts"
     },
-    "./styles.css": "./build/index.css",
+    "./styles.css": "./build/styles.css",
     "./static/*": "./build/static/*"
   },
   "files": [

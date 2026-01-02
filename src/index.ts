@@ -52,4 +52,6 @@ export type {
 export { UserMenu } from "./components/user-menu";
 export type { UserMenuInput } from "./components/user-menu";
 
+export { constants } from "./constants";
+
 export { theme } from "./vars/theme";
