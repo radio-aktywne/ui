@@ -1,3 +1,5 @@
-.cell {
-  position: relative;
+@layer radio-aktywne {
+  .cell {
+    position: relative;
+  }
 }
