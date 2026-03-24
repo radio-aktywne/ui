@@ -9,6 +9,7 @@ import {
   defaultVariantColorsResolver,
   Input,
   Loader,
+  Modal,
   Notification,
   Pagination,
   Paper,
@@ -62,6 +63,12 @@ export const theme = createTheme({
     Loader: Loader.extend({
       classNames: {
         root: loaderClasses.root,
+      },
+    }),
+
+    Modal: Modal.extend({
+      defaultProps: {
+        shadow: "md",
       },
     }),
 
