@@ -3,6 +3,7 @@
 import {
   ActionIcon,
   Checkbox,
+  CheckboxIndicator,
   CheckIcon,
   Container,
   createTheme,
@@ -14,6 +15,7 @@ import {
   Pagination,
   Paper,
   Radio,
+  RadioIndicator,
   Slider,
   Switch,
   ThemeIcon,
@@ -22,12 +24,14 @@ import {
 
 import { constants } from "../../constants";
 import checkboxClasses from "./Checkbox.module.css";
+import checkboxIndicatorClasses from "./CheckboxIndicator.module.css";
 import loaderClasses from "./Loader.module.css";
 import modalClasses from "./Modal.module.css";
 import notificationClasses from "./Notification.module.css";
 import paginationClasses from "./Pagination.module.css";
 import paperClasses from "./Paper.module.css";
 import radioClasses from "./Radio.module.css";
+import radioIndicatorClasses from "./RadioIndicator.module.css";
 import sliderClasses from "./Slider.module.css";
 import switchClasses from "./Switch.module.css";
 
@@ -44,7 +48,15 @@ export const theme = createTheme({
 
     Checkbox: Checkbox.extend({
       classNames: {
+        icon: checkboxClasses.icon,
         input: checkboxClasses.input,
+      },
+    }),
+
+    CheckboxIndicator: CheckboxIndicator.extend({
+      classNames: {
+        icon: checkboxIndicatorClasses.icon,
+        indicator: checkboxIndicatorClasses.indicator,
       },
     }),
 
@@ -116,7 +128,20 @@ export const theme = createTheme({
 
     Radio: Radio.extend({
       classNames: {
+        icon: radioClasses.icon,
         radio: radioClasses.radio,
+      },
+
+      defaultProps: {
+        icon: CheckIcon,
+        radius: 0,
+      },
+    }),
+
+    RadioIndicator: RadioIndicator.extend({
+      classNames: {
+        icon: radioIndicatorClasses.icon,
+        indicator: radioIndicatorClasses.indicator,
       },
 
       defaultProps: {
