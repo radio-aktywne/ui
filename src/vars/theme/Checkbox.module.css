@@ -1,4 +1,11 @@
 @layer radio-aktywne {
+  .icon {
+    inset: 0;
+    margin: auto;
+    transform: none;
+    width: 60%;
+  }
+
   .input {
     border: none;
 

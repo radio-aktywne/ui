@@ -6,10 +6,10 @@
     width: 60%;
   }
 
-  .radio {
+  .indicator {
     border: none;
 
-    &:not(:checked, :disabled) {
+    &:not([data-checked="true"], [data-disabled="true"]) {
       background-color: var(--mantine-color-default);
     }
   }
