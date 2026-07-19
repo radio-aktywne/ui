@@ -1,0 +1,18 @@
+@layer radio-aktywne {
+  .content {
+    min-width: max-content;
+  }
+
+  .header {
+    background-color: var(--mantine-color-midground);
+    gap: var(--mantine-spacing-md);
+  }
+
+  .title {
+    color: var(--mantine-primary-color-text);
+    font-family: var(--mantine-font-family-headings);
+    font-size: var(--mantine-h2-font-size);
+    font-weight: var(--mantine-h2-font-weight);
+    line-height: var(--mantine-h2-line-height);
+  }
+}

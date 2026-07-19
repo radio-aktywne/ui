@@ -23,6 +23,7 @@ import {
 import { constants } from "../../constants";
 import checkboxClasses from "./Checkbox.module.css";
 import loaderClasses from "./Loader.module.css";
+import modalClasses from "./Modal.module.css";
 import notificationClasses from "./Notification.module.css";
 import paginationClasses from "./Pagination.module.css";
 import paperClasses from "./Paper.module.css";
@@ -67,7 +68,20 @@ export const theme = createTheme({
     }),
 
     Modal: Modal.extend({
+      classNames: {
+        content: modalClasses.content,
+        header: modalClasses.header,
+        title: modalClasses.title,
+      },
+
       defaultProps: {
+        centered: true,
+
+        overlayProps: {
+          backgroundOpacity: 0.5,
+          blur: 10,
+        },
+
         shadow: "md",
       },
     }),
