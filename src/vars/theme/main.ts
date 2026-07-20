@@ -215,8 +215,6 @@ export const theme = createTheme({
       resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
     } else if (input.variant === "subtle" && parsed.shade === undefined) {
       resolved.color = `var(--mantine-color-${parsed.color}-text)`;
-    } else if (input.variant === "transparent" && input.color === undefined) {
-      resolved.color = "inherit";
     } else if (input.variant === "transparent" && parsed.shade === undefined) {
       resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
     }

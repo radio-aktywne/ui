@@ -10,10 +10,10 @@ const meta = {
     children: ["One", "Two", "Three"].map((text, index) => (
       <ListItem key={index}>
         <Text fw="bold">{text}</Text>
-        <ActionIcon>
+        <ActionIcon color="inherit">
           <MdDelete size="75%" />
         </ActionIcon>
-        <ActionIcon>
+        <ActionIcon color="inherit">
           <MdEdit size="75%" />
         </ActionIcon>
       </ListItem>

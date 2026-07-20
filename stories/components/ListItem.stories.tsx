@@ -10,10 +10,10 @@ const meta = {
     children: (
       <>
         <Text fw="bold">Item</Text>
-        <ActionIcon>
+        <ActionIcon color="inherit">
           <MdDelete size="75%" />
         </ActionIcon>
-        <ActionIcon>
+        <ActionIcon color="inherit">
           <MdEdit size="75%" />
         </ActionIcon>
       </>

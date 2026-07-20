@@ -52,6 +52,7 @@ export function UserMenu({
               ]),
             ),
           }}
+          variant="transparent"
         >
           <MdPerson size="75%" />
         </ActionIcon>
