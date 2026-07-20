@@ -1,26 +1,33 @@
-import type { ComponentType, JSX, ReactNode } from "react";
+import type { ComponentType, CSSProperties, JSX, ReactNode } from "react";
 
 import { Box, Text } from "@mantine/core";
 import { Fragment } from "react";
 
-export type TypesetInput<P, K, V> = {
+export type VariantsInput<P, K, V> = {
+  align?: CSSProperties["alignItems"];
   component: ComponentType<P>;
   property: K;
   rest: JSX.IntrinsicAttributes & P;
   values: { label: string; value: V }[];
 };
 
-export function Typeset<
+export function Variants<
   P,
   K extends keyof P,
   V extends Extract<P[K], ReactNode>,
->({ component: Component, property, rest, values }: TypesetInput<P, K, V>) {
+>({
+  align = "center",
+  component: Component,
+  property,
+  rest,
+  values,
+}: VariantsInput<P, K, V>) {
   return (
     <Box
       style={{
-        alignItems: "baseline",
+        alignItems: align,
         display: "grid",
-        gap: "var(--mantine-spacing-md)",
+        gap: "var(--mantine-spacing-lg)",
         gridTemplateColumns: "auto auto",
       }}
     >
@@ -29,16 +36,7 @@ export function Typeset<
           <Text c="dimmed" fz="xs" ta="end">
             {label}
           </Text>
-          <Component
-            style={{
-              overflow: "hidden",
-              textAlign: "start",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-            }}
-            {...{ [property]: value }}
-            {...rest}
-          />
+          <Component {...rest} {...{ [property]: value }} />
         </Fragment>
       ))}
     </Box>

@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "storybook-react-rsbuild";
 
 import { Loader } from "@mantine/core";
 
+import { Variants } from "../../utils/Variants";
+
 const meta = {
   component: Loader,
   parameters: {
@@ -12,6 +14,17 @@ const meta = {
       },
     },
   },
+  render: (input) => (
+    <Variants
+      component={Loader}
+      property="type"
+      rest={input}
+      values={(["oval", "dots"] as const).map((variant) => ({
+        label: variant,
+        value: variant,
+      }))}
+    />
+  ),
   tags: ["!autodocs", "!dev", "!test"],
 } satisfies Meta<typeof Loader>;
 

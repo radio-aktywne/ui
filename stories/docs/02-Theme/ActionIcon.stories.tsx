@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from "storybook-react-rsbuild";
 
-import { Button } from "@mantine/core";
+import { ActionIcon } from "@mantine/core";
+import { MdFavorite } from "react-icons/md";
 
 import { Variants } from "../../utils/Variants";
 
 const meta = {
   args: {
-    children: "Click me",
+    children: <MdFavorite />,
   },
-  component: Button,
+  component: ActionIcon,
   parameters: {
     docs: {
       canvas: {
@@ -19,7 +20,7 @@ const meta = {
   },
   render: (input) => (
     <Variants
-      component={Button<"button">}
+      component={ActionIcon<"button">}
       property="variant"
       rest={input}
       values={(
@@ -28,7 +29,7 @@ const meta = {
     />
   ),
   tags: ["!autodocs", "!dev", "!test"],
-} satisfies Meta<typeof Button<"button">>;
+} satisfies Meta<typeof ActionIcon<"button">>;
 
 type Story = StoryObj<typeof meta>;
 
