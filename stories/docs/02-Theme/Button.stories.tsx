@@ -23,7 +23,14 @@ const meta = {
       property="variant"
       rest={input}
       values={(
-        ["filled", "light", "outline", "subtle", "transparent"] as const
+        [
+          "default",
+          "filled",
+          "light",
+          "outline",
+          "subtle",
+          "transparent",
+        ] as const
       ).map((variant) => ({ label: variant, value: variant }))}
     />
   ),
