@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "storybook-react-rsbuild";
 
 import { Title } from "@mantine/core";
 
-import { Typeset } from "./Typeset";
+import { Variants } from "../../utils/Variants";
 
 const meta = {
   args: {
@@ -26,18 +26,23 @@ export default meta;
 
 export const Orders = {
   render: (input) => (
-    <Typeset
+    <Variants
+      align="baseline"
       component={Title}
       property="order"
-      rest={input}
-      values={[
-        { label: "6", value: 6 },
-        { label: "5", value: 5 },
-        { label: "4", value: 4 },
-        { label: "3", value: 3 },
-        { label: "2", value: 2 },
-        { label: "1", value: 1 },
-      ]}
+      rest={{
+        ...input,
+        style: {
+          overflow: "hidden",
+          textAlign: "start",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
+        },
+      }}
+      values={([6, 5, 4, 3, 2, 1] as const).map((order) => ({
+        label: order.toString(),
+        value: order,
+      }))}
     />
   ),
 } satisfies Story;
