@@ -44,7 +44,7 @@ export const theme = createTheme({
   components: {
     ActionIcon: ActionIcon.extend({
       defaultProps: {
-        variant: "default",
+        variant: "transparent",
       },
     }),
 
@@ -206,13 +206,17 @@ export const theme = createTheme({
     const parsed = parseThemeColor({ color: input.color, theme: input.theme });
     const resolved = defaultVariantColorsResolver(input);
 
-    if (input.variant === "light" && parsed.shade === undefined) {
+    if (input.variant === "default") {
+      resolved.border = `${rem(1)} solid transparent`;
+    } else if (input.variant === "light" && parsed.shade === undefined) {
       resolved.color = `var(--mantine-color-${parsed.color}-text)`;
     } else if (input.variant === "outline" && parsed.shade === undefined) {
       resolved.border = `${rem(1)} solid var(--mantine-color-${parsed.color}-filled)`;
       resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
     } else if (input.variant === "subtle" && parsed.shade === undefined) {
       resolved.color = `var(--mantine-color-${parsed.color}-text)`;
+    } else if (input.variant === "transparent" && input.color === undefined) {
+      resolved.color = "inherit";
     } else if (input.variant === "transparent" && parsed.shade === undefined) {
       resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
     }
