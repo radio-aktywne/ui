@@ -40,7 +40,7 @@ export function UserMenu({
       <FloatingMenu.Target>
         <ActionIcon
           bg="var(--mantine-color-midground)"
-          c={rawColor}
+          color={rawColor}
           size={size}
           style={{
             "--mantine-color-shadow": rawColor,
@@ -69,7 +69,11 @@ export function UserMenu({
               <Text c="ra-red" size="sm">
                 {items.logout.label}
               </Text>
-              <ActionIcon c="ra-red" size="sm" variant="transparent">
+              <ActionIcon
+                color="var(--mantine-color-ra-red-text)"
+                size="sm"
+                variant="transparent"
+              >
                 <MdLogout size="75%" />
               </ActionIcon>
             </ListItem>

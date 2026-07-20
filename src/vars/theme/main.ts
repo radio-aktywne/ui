@@ -208,14 +208,30 @@ export const theme = createTheme({
 
     if (input.variant === "default") {
       resolved.border = `${rem(1)} solid transparent`;
-    } else if (input.variant === "light" && parsed.shade === undefined) {
+    } else if (
+      input.variant === "light" &&
+      parsed.isThemeColor &&
+      parsed.shade === undefined
+    ) {
       resolved.color = `var(--mantine-color-${parsed.color}-text)`;
-    } else if (input.variant === "outline" && parsed.shade === undefined) {
+    } else if (
+      input.variant === "outline" &&
+      parsed.isThemeColor &&
+      parsed.shade === undefined
+    ) {
       resolved.border = `${rem(1)} solid var(--mantine-color-${parsed.color}-filled)`;
       resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
-    } else if (input.variant === "subtle" && parsed.shade === undefined) {
+    } else if (
+      input.variant === "subtle" &&
+      parsed.isThemeColor &&
+      parsed.shade === undefined
+    ) {
       resolved.color = `var(--mantine-color-${parsed.color}-text)`;
-    } else if (input.variant === "transparent" && parsed.shade === undefined) {
+    } else if (
+      input.variant === "transparent" &&
+      parsed.isThemeColor &&
+      parsed.shade === undefined
+    ) {
       resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
     }
 
