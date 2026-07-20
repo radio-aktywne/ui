@@ -14,8 +14,10 @@ import {
   Notification,
   Pagination,
   Paper,
+  parseThemeColor,
   Radio,
   RadioIndicator,
+  rem,
   Slider,
   Switch,
   ThemeIcon,
@@ -201,17 +203,20 @@ export const theme = createTheme({
   shadows: constants.theme.shadows,
 
   variantColorResolver: (input) => {
-    const defaultResolvedColors = defaultVariantColorsResolver(input);
+    const parsed = parseThemeColor({ color: input.color, theme: input.theme });
+    const resolved = defaultVariantColorsResolver(input);
 
-    if (input.variant === "default") {
-      return {
-        ...defaultResolvedColors,
-        background: "none",
-        border: "none",
-        hover: "none",
-      };
+    if (input.variant === "light" && parsed.shade === undefined) {
+      resolved.color = `var(--mantine-color-${parsed.color}-text)`;
+    } else if (input.variant === "outline" && parsed.shade === undefined) {
+      resolved.border = `${rem(1)} solid var(--mantine-color-${parsed.color}-filled)`;
+      resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
+    } else if (input.variant === "subtle" && parsed.shade === undefined) {
+      resolved.color = `var(--mantine-color-${parsed.color}-text)`;
+    } else if (input.variant === "transparent" && parsed.shade === undefined) {
+      resolved.color = `var(--mantine-color-${parsed.color}-filled)`;
     }
 
-    return defaultResolvedColors;
+    return resolved;
   },
 });
