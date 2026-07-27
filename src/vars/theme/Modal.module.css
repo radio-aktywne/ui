@@ -6,6 +6,7 @@
   .header {
     background-color: var(--mantine-color-midground);
     gap: var(--mantine-spacing-md);
+    position: relative;
   }
 
   .title {
