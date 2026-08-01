@@ -9,6 +9,7 @@ import {
   createTheme,
   defaultVariantColorsResolver,
   Input,
+  InputWrapper,
   Loader,
   Modal,
   Notification,
@@ -27,6 +28,8 @@ import {
 import { constants } from "../../constants";
 import checkboxClasses from "./Checkbox.module.css";
 import checkboxIndicatorClasses from "./CheckboxIndicator.module.css";
+import inputClasses from "./Input.module.css";
+import inputWrapperClasses from "./InputWrapper.module.css";
 import loaderClasses from "./Loader.module.css";
 import modalClasses from "./Modal.module.css";
 import notificationClasses from "./Notification.module.css";
@@ -70,8 +73,17 @@ export const theme = createTheme({
     }),
 
     Input: Input.extend({
+      classNames: {
+        wrapper: inputClasses.wrapper,
+      },
       defaultProps: {
         variant: "filled",
+      },
+    }),
+
+    InputWrapper: InputWrapper.extend({
+      classNames: {
+        error: inputWrapperClasses.error,
       },
     }),
 

@@ -1,0 +1,9 @@
+@layer radio-aktywne {
+  .error {
+    overflow: hidden;
+    padding-top: calc(0.5 * var(--mantine-spacing-xs));
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
