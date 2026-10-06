@@ -17,8 +17,8 @@ export const MasterDetailLayout = createPolymorphicComponent<
 >(function MasterDetailLayout({
   classNames,
   columns = 12,
+  gap = "md",
   grow = true,
-  gutter = "md",
   justify = "center",
   ...input
 }: MasterDetailLayoutInput) {
@@ -43,8 +43,8 @@ export const MasterDetailLayout = createPolymorphicComponent<
         ),
       }}
       columns={columns}
+      gap={gap}
       grow={grow}
-      gutter={gutter}
       justify={justify}
       {...input}
     />

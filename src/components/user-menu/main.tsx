@@ -1,6 +1,11 @@
 "use client";
 
-import { ActionIcon, Box, Text, useMantineTheme } from "@mantine/core";
+import {
+  ActionIcon as MantineActionIcon,
+  Box as MantineBox,
+  Text as MantineText,
+  useMantineTheme,
+} from "@mantine/core";
 import { MdLogout, MdPerson } from "react-icons/md";
 
 import type { UserMenuInput } from "./types";
@@ -38,7 +43,7 @@ export function UserMenu({
   return (
     <FloatingMenu position="top-right" {...input}>
       <FloatingMenu.Target>
-        <ActionIcon
+        <MantineActionIcon
           bg="var(--mantine-color-midground)"
           color={rawColor}
           size={size}
@@ -55,29 +60,29 @@ export function UserMenu({
           variant="transparent"
         >
           <MdPerson size="75%" />
-        </ActionIcon>
+        </MantineActionIcon>
       </FloatingMenu.Target>
       <FloatingMenu.Dropdown bg="var(--mantine-color-midground)">
         <List>
           <ListItem p="0.5rem">
-            <Text fw="bold" size="sm">
+            <MantineText fw="bold" size="sm">
               {user.name}
-            </Text>
+            </MantineText>
           </ListItem>
-          <Box component="a" href={items.logout.url} td="none">
+          <MantineBox component="a" href={items.logout.url} td="none">
             <ListItem p="0.5rem">
-              <Text c="ra-red" size="sm">
+              <MantineText c="ra-red" size="sm">
                 {items.logout.label}
-              </Text>
-              <ActionIcon
+              </MantineText>
+              <MantineActionIcon
                 color="var(--mantine-color-ra-red-text)"
                 size="sm"
                 variant="transparent"
               >
                 <MdLogout size="75%" />
-              </ActionIcon>
+              </MantineActionIcon>
             </ListItem>
-          </Box>
+          </MantineBox>
         </List>
       </FloatingMenu.Dropdown>
     </FloatingMenu>

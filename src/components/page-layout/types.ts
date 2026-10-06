@@ -11,10 +11,7 @@ export type PageLayoutInput = {
 
   /** Position of notifications on the screen */
   notificationsPosition?:
-    | "bottom-left"
-    | "bottom-right"
-    | "top-left"
-    | "top-right";
+    "bottom-left" | "bottom-right" | "top-left" | "top-right";
 
   /** Size of notifications */
   notificationsSize?: MantineSize | number | (string & {});

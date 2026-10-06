@@ -6,16 +6,16 @@ import type { ElementType } from "react";
 
 export type BaseMasterDetailLayoutInput = Omit<
   MantineGridProps,
-  "columns" | "grow" | "gutter" | "justify"
+  "columns" | "gap" | "grow" | "justify"
 > & {
   /** Number of columns in grid determining panels size */
   columns?: MantineGridProps["columns"];
 
+  /** Gap between panels, key of `theme.spacing` or any valid CSS value */
+  gap?: MantineGridProps["gap"];
+
   /** Determines whether panels should expand to fill all available space */
   grow?: MantineGridProps["grow"];
-
-  /** Gutter between panels, key of `theme.spacing` or any valid CSS value */
-  gutter?: MantineGridProps["gutter"];
 
   /** Sets `justify-content` */
   justify?: MantineGridProps["justify"];
