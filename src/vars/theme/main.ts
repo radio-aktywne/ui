@@ -5,6 +5,7 @@ import {
   Checkbox,
   CheckboxIndicator,
   CheckIcon,
+  Code,
   Container,
   createTheme,
   defaultVariantColorsResolver,
@@ -56,12 +57,22 @@ export const theme = createTheme({
         icon: checkboxClasses.icon,
         input: checkboxClasses.input,
       },
+
+      defaultProps: {
+        radius: constants.theme.defaultRadius,
+      },
     }),
 
     CheckboxIndicator: CheckboxIndicator.extend({
       classNames: {
         icon: checkboxIndicatorClasses.icon,
         indicator: checkboxIndicatorClasses.indicator,
+      },
+    }),
+
+    Code: Code.extend({
+      defaultProps: {
+        bdrs: constants.theme.defaultRadius,
       },
     }),
 
@@ -148,7 +159,7 @@ export const theme = createTheme({
 
       defaultProps: {
         icon: CheckIcon,
-        radius: 0,
+        radius: constants.theme.defaultRadius,
       },
     }),
 
@@ -160,7 +171,7 @@ export const theme = createTheme({
 
       defaultProps: {
         icon: CheckIcon,
-        radius: 0,
+        radius: constants.theme.defaultRadius,
       },
     }),
 
@@ -185,7 +196,7 @@ export const theme = createTheme({
       },
 
       defaultProps: {
-        radius: 0,
+        radius: constants.theme.defaultRadius,
         withThumbIndicator: false,
       },
     }),

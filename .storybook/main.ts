@@ -4,6 +4,7 @@ import type { StorybookConfig } from "storybook-react-rsbuild";
 export default {
   addons: ["@storybook/addon-docs", "storybook-addon-rslib"],
   core: {
+    allowedHosts: ["0.0.0.0"],
     disableTelemetry: true,
   },
   framework: "storybook-react-rsbuild",

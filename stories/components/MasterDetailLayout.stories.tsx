@@ -11,18 +11,18 @@ import {
 
 const meta = {
   argTypes: {
-    grow: {
-      control: "boolean",
-    },
-    gutter: {
+    gap: {
       control: "radio",
       options: ["xs", "sm", "md", "lg", "xl"],
+    },
+    grow: {
+      control: "boolean",
     },
   },
   component: MasterDetailLayout,
   parameters: {
     controls: {
-      include: ["grow", "gutter"],
+      include: ["gap", "grow"],
     },
     preview: {
       layout: false,
