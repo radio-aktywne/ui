@@ -1,4 +1,5 @@
 import type { MantineShadow, MantineSize } from "@mantine/core";
+import type { IconType } from "react-icons";
 
 import type { FloatingMenuInput } from "../floating-menu";
 
@@ -7,17 +8,18 @@ type User = {
   name: string;
 };
 
-type LogoutItem = {
+type Item = {
+  /** Color of the item */
+  color?: "blue" | "green" | "primary" | "red" | "yellow";
+
+  /** Icon to display */
+  icon: IconType;
+
   /** Text to display */
   label: string;
 
   /** URL to redirect to */
   url: string;
-};
-
-type Items = {
-  /** Logout item */
-  logout: LogoutItem;
 };
 
 export type UserMenuInput = Omit<
@@ -28,7 +30,7 @@ export type UserMenuInput = Omit<
   color?: "blue" | "green" | "primary" | "red" | "yellow";
 
   /** Items in the menu */
-  items: Items;
+  items: Item[];
 
   /** Shadow of the menu button */
   shadow?: MantineShadow;

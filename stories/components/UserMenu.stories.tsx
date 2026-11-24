@@ -1,15 +1,29 @@
 import type { Meta, StoryObj } from "storybook-react-rsbuild";
 
+import { MdApps, MdLogout, MdManageAccounts } from "react-icons/md";
+
 import { PageLayout, UserMenu } from "../../src";
 
 const meta = {
   args: {
-    items: {
-      logout: {
+    items: [
+      {
+        icon: MdApps,
+        label: "Apps",
+        url: "https://example.com/apps",
+      },
+      {
+        icon: MdManageAccounts,
+        label: "Account",
+        url: "https://example.com/account",
+      },
+      {
+        color: "red",
+        icon: MdLogout,
         label: "Logout",
         url: "https://example.com/logout",
       },
-    },
+    ],
     user: {
       name: "John Doe",
     },

@@ -6,7 +6,7 @@ import {
   Text as MantineText,
   useMantineTheme,
 } from "@mantine/core";
-import { MdLogout, MdPerson } from "react-icons/md";
+import { MdPerson } from "react-icons/md";
 
 import type { UserMenuInput } from "./types";
 
@@ -69,20 +69,43 @@ export function UserMenu({
               {user.name}
             </MantineText>
           </ListItem>
-          <MantineBox component="a" href={items.logout.url} td="none">
-            <ListItem p="0.5rem">
-              <MantineText c="ra-red" size="sm">
-                {items.logout.label}
-              </MantineText>
-              <MantineActionIcon
-                color="var(--mantine-color-ra-red-text)"
-                size="sm"
-                variant="transparent"
-              >
-                <MdLogout size="75%" />
-              </MantineActionIcon>
-            </ListItem>
-          </MantineBox>
+          {items.map((item, index) => {
+            const Icon = item.icon;
+
+            const rawItemColor = (() => {
+              switch (item.color) {
+                case "blue":
+                  return "var(--mantine-color-ra-blue-text)";
+                case "green":
+                  return "var(--mantine-color-ra-green-text)";
+                case "primary":
+                  return "var(--mantine-primary-color-text)";
+                case "red":
+                  return "var(--mantine-color-ra-red-text)";
+                case undefined:
+                  return "var(--mantine-color-text)";
+                case "yellow":
+                  return "var(--mantine-color-ra-yellow-text)";
+              }
+            })();
+
+            return (
+              <MantineBox component="a" href={item.url} key={index} td="none">
+                <ListItem p="0.5rem">
+                  <MantineText c={rawItemColor} size="sm">
+                    {item.label}
+                  </MantineText>
+                  <MantineActionIcon
+                    color={rawItemColor}
+                    size="sm"
+                    variant="transparent"
+                  >
+                    <Icon size="75%" />
+                  </MantineActionIcon>
+                </ListItem>
+              </MantineBox>
+            );
+          })}
         </List>
       </FloatingMenu.Dropdown>
     </FloatingMenu>
